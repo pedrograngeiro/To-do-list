@@ -1,0 +1,18 @@
+Crie uma base para um to do list, onde o usuário possa adicionar itens e marcá-los como feito. Usando html css e javascript (puro ou com jquery) crie uma página que tenha:
+
+- um input onde o usuário possa digitar o nome do item a ser adicionado na lista
+- um botão para adicionar o item
+- uma lista onde os itens serão adicionados
+- um botão do lado de cada item para marcar como feito
+- um botão para remover o item
+- um botão para limpar a lista
+
+A lista deve ser salva no localStorage do navegador para que ao recarregar a página os itens sejam mantidos. Caso o usuário limpe a lista os itens devem ser removidos do localStorage.
+
+O layout é livre, mas deve ser responsivo. Se quiser pode usar bootstrap, materialize ou outro framework css para ajudar no layout.
+
+Não é necessário se preocupar com a aparência no Internet Explorer, mas o código deve funcionar no Chrome, Firefox e Edge.
+
+Não é necessário se preocupar com a aparência no Internet Explorer, mas o código deve funcionar no Chrome, Firefox e Edge.
+
+O código deve ser enviado para um repositório no github e o link deve ser enviado para o email

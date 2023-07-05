@@ -1,0 +1,9 @@
+/* Path: style.css */
+/* Define a cor de fundo da pagina */
+body {
+    background-color: #d9d9d9;
+}
+/* Define a cor do titulo */
+h1 {
+    color: #ff6600;
+}
