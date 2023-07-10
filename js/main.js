@@ -1,24 +1,24 @@
-var myList = [];
+let grocery = document.getElementById("grocery");
+grocery.addEventListener("submit", addItem);
 
-function addToList() {
-  var input = document.getElementById("input");
-  var value = input.value;
+function addItem(e) {
+  e.preventDefault();
+  let data = this.elements.writeList.value;
+  let list = document.querySelector("ol");
+  let item = document.createElement("li");
+  let text = document.createElement("p");
 
-  myList.push(value);
+  text.textContent = data;
+  this.elements.writeList.value = "";
+  item.appendChild(text);
+  list.appendChild(item);
 
-  input.value = "";
-
-  displayList();
+  let rmvBtn = document.createElement("span");
+  rmvBtn.innerHTML = '<i class="fa-solid fa-minus remove"></i>';
+  item.appendChild(rmvBtn);
+  rmvBtn.addEventListener("click", deleteItem);
 }
 
-function displayList() {
-  var listContainer = document.getElementById("list");
-
-  listContainer.innerHTML = "";
-
-  for (var i = 0; i < myList.length; i++) {
-    var listItem = document.createElement("li");
-    listItem.textContent = myList[i];
-    listContainer.appendChild(listItem);
-  }
+function deleteItem(e) {
+  this.parentElement.remove();
 }
