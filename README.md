@@ -39,6 +39,4 @@ Contributions are welcome! If you find any bug or have any improvements to sugge
 
 This project is licensed under the [MIT License](LICENSE).
 
-<pre>
-Basta copiar e colar o conteúdo acima no seu README.md do GitHub ou do GitLab. Espero que isso seja útil!
-</pre>
+

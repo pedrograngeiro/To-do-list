@@ -99,3 +99,18 @@ body {
 .container ol li i {
     padding: 0 0 0 2px;
 }
+
+.container ol li.checked {
+    text-decoration: line-through;
+    color: #4bae4f;
+}
+
+.container ol li .done {
+    position: absolute;
+    top: 20px;
+    /* margin-left: 10px; */
+    right: 0;
+    width: 25px;
+    height: 25px;
+
+}
