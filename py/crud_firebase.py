@@ -12,14 +12,13 @@ def link():
   return "https://tokamban-65719-default-rtdb.firebaseio.com/"
 
 
-def post(dados):
+def post(dados, link):
   """
     Metodo post para criar um novo item no firebase.
     Sendo dados no formato de dicionario.
   """
-  link = link()
   requisicao_mensagem = requests.post(f'{link}/lista/.json', data=json.dumps(dados))
-  return requisicao_mensagem.txt
+  return requisicao_mensagem.text
 
 def get_all(link):
   """
@@ -30,28 +29,28 @@ def get_all(link):
   dicio_link = requisicao.json()
   return dicio_link
 
-def get_by_id(id_item):
+def get_by_id(id_item, link):
   """
     Metodo para retornar um item do firebase a partir do id.
   """
-  link = link()
+  
   requisicao = requests.get(f'{link}/lista/{id_item}/.json')
   dicio_link = requisicao.json()
   return dicio_link
 
-def update_by_id(id_item, dados):
+def update_by_id(id_item, dados, link):
   """
     Metodo para atualizar um item do firebase a partir do id.
   """
-  link = link()
+  
   requisicao = requests.patch(f'{link}/lista/{id_item}/.json', data=json.dumps(dados))
+  print(f"id atualizado: {id_item}")
   return requisicao.text
 
-def delete(id_item):
+def delete(id_item, link):
   """
     Metodo para deletar um item do firebase a partir do id.
   """
-  link = link()
   requisicao = requests.delete(f'{link}/lista/{id_item}/.json')
   print(f"id apagado: {id_item}")
   return requisicao.text
@@ -64,21 +63,24 @@ if __name__ == '__main__':
   data_concluido = data_hoje.strftime("%d/%m/%Y")
   # metodo (post)
   dados = {
-      "mensagem":"mensagem criada",
-      "status":True,
+      "mensagem":"lorem atualizado.",
+      "status":False,
       "homologacao":"desenv",
       "created":data_created,
       "update":data_update,
       "concluida":data_concluido,
-      "user":'0rakul0'
+      "user":'teste'
   }
   link = link()
-  print(get_all(link=link))
+  # print(get_all(link = link))
 
-  # # metodo get por bloco produtos
-  # requisicao = requests.get(f'{link}/lista/.json')
-  # dic_requisicao = requisicao.json()
-  # id_item = None
-  # for item in dic_requisicao:
-  #     id_item = item
+  # metodo get por bloco produtos
+  requisicao = requests.get(f'{link}/lista/.json')
+  dic_requisicao = requisicao.json()
+  id_item = None
+  for item in dic_requisicao:
+      id_item = item
+      print(id_item)
+  # delete(id_item="-Namcso4YIXQU5-yySK3", link=link)
 
+  update_by_id(id_item="-NamPek9Zu_np2EQ9Bof", dados=dados, link=link)
