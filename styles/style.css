@@ -1,75 +1,113 @@
 body {
-    background-color: #FFFFFF;
-    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  a {
+}
+
+a {
     color: #fff;
     text-decoration: none;
-  }
-  
-  a:hover {
+}
+
+a:hover {
     color: #ffddaa;
     text-decoration: none;
-  }
-  
-  .container {
+}
+
+.container {
     display: flex;
     flex-direction: row; /* Ajusta a direção do flex container */
     height: 100vh; /* Ocupa toda a altura da janela */
-  }
-  
-  .vertical-menu {
+}
+
+.vertical-menu {
     background-color: #663399;
     width: 100px;
     padding: 5px;
-  }
-  
-  .vertical-menu ul {
+}
+
+.vertical-menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .vertical-menu li {
+}
+
+.vertical-menu li {
     margin-bottom: 10px;
-  }
-  
-  .header {
+}
+
+.header {
     display: flex;
     justify-content: flex-end;
 
     order: 1; /* Altera a ordem para aparecer à direita */
-  }
-  
-  .header__menu {
+}
+
+.header__menu {
     display: flex;
     justify-content: center;
-  }
-  
-  .header__menu ul {
+}
+
+.header__menu ul {
     list-style: none;
     margin: 0;
     padding: 25px 0 0 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-  }
-  
-  .header__menu li {
+}
+
+.header__menu li {
     margin: 0 0 0 20px;
-  }
-  
-  .header__menu a {
+}
+
+.header__menu a {
     color: #111010;
     cursor: pointer;
     text-decoration: none;
-  }
-  
-  .header__menu a:hover {
+}
+
+.header__menu a:hover {
     color: #ffddaa;
     text-decoration: none;
-  }
-  
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Estilos da tabela */
+
+.todo-list__container {
+    flex: 1;
+}
+
+.todo-list__header th {
+    font-size: 24px;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.todo-list__header td {
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+.todo-list__item:last-child td {
+    border-bottom: none;
+}
+
+.todo_list__item p {
+    margin: 0;
+}
+
+.todo-list__item input[type='checkbox'] {
+    margin: 0 10px 0 0;
+}
