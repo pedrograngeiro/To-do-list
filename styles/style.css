@@ -40,7 +40,7 @@ body {
   .header {
     display: flex;
     justify-content: flex-end;
-    flex-grow: 1; /* Ocupa o espaço restante disponível */
+
     order: 1; /* Altera a ordem para aparecer à direita */
   }
   
@@ -52,10 +52,10 @@ body {
   .header__menu ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 25px 0 0 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
   
   .header__menu li {
