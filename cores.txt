@@ -1,0 +1,7 @@
+Roxo: #663399
+Branco: #FFFFFF
+Rosa: #FF66CC
+Azul claro: #99CCFF
+Laranja claro: #ffddaa
+Verde: #33CC33
+

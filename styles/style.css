@@ -1,116 +1,75 @@
-*{
+body {
+    background-color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #ffddaa;
+    text-decoration: none;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row; /* Ajusta a direção do flex container */
+    height: 100vh; /* Ocupa toda a altura da janela */
+  }
+  
+  .vertical-menu {
+    background-color: #663399;
+    width: 100px;
+    padding: 5px;
+  }
+  
+  .vertical-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .vertical-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1; /* Ocupa o espaço restante disponível */
+    order: 1; /* Altera a ordem para aparecer à direita */
+  }
+  
+  .header__menu {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header__menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(45deg, #9c27b0, #31d5eb);
-}
-
-.container {
-    position: relative;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.container .box {
-    position: relative;
-    width: 400px;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1)
-}
-
-.container .box h2 {
-    font-size: 1.75em;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 15px;
-    width: 100%;
-    text-align: center;
-}
-
-.container .box #grocery {
-    position: relative;
-    width: 100%;
-    display: flex;
-}
-
-.container .box #grocery input {
-    position: relative;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #333;
-    outline: none;
-}
-
-.container .box #grocery button {
-    background: #4bae4f;
-    color: #fff;
-    min-width: 100px;
-    font-weight: 500;
-    border: 1px solid #333;
+  }
+  
+  .header__menu li {
+    margin: 0 0 0 20px;
+  }
+  
+  .header__menu a {
+    color: #111010;
     cursor: pointer;
-    outline: none;
-}
-
-.container ol {
-    position: relative;
-    padding: 10px 20px 10px 40px;
-    width: 100%;
-    min-height: 398px;
-    background: #fff repeating-linear-gradient(transparent 0%, transparent 99%, #000 99%, #000 100%);
-    background-size: 50px 50px;
-    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1)
-}
-
-.container ol li {
-    position: relative;
-    font-size: 1.5em;
-    height: 50px;
-}
-
-.container ol li .remove {
-    position: absolute;
-    top: 5px;
-    /* margin-left: 10px; */
-    right: 0;
-    width: 25px;
-    height: 25px;
-    background: rgba(255, 0, 0, 0.459);
-    border-radius: 50%;
-    color: #fafafa;
-}
-
-.container ol li .remove:hover {
-    background: rgba(255, 0, 0, 0.8);
-    color: #fff;
-    cursor: pointer;
-}
-
-.container ol li i {
-    padding: 0 0 0 2px;
-}
-
-.container ol li.checked {
-    text-decoration: line-through;
-    color: #4bae4f;
-}
-
-.container ol li .done {
-    position: absolute;
-    top: 20px;
-    /* margin-left: 10px; */
-    right: 0;
-    width: 25px;
-    height: 25px;
-
-}
+    text-decoration: none;
+  }
+  
+  .header__menu a:hover {
+    color: #ffddaa;
+    text-decoration: none;
+  }
+  

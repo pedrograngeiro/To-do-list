@@ -2,25 +2,29 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>My Page</title>
+    <title>To do list</title>
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="box">
-        <h2>To do List</h2>
-        <form id="grocery">
-          <input
-            id="writeList"
-            type="text"
-            placeholder="Digite a tarefa..."
-            required
-          />
-          <button>Add Item</button>
-        </form>
+      <div class="vertical-menu">
+        <ul>
+          <li><a href="#">Opção 1</a></li>
+          <li><a href="#">Opção 2</a></li>
+          <li><a href="#">Opção 3</a></li>
+        </ul>
       </div>
 
-      <ol></ol>
+      <header class="header todo-list">
+        <nav class="header__menu">
+          <h1>To do list</h1>
+          <ul>
+            <li><a href="#">Editar</a></li>
+            <li><a href="#">Duplicar</a></li>
+            <li><a href="#">Mudar Status</a></li>
+          </ul>
+        </nav>
+      </header>
     </div>
 
     <script src="/js/main.js"></script>
