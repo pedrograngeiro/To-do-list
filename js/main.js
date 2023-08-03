@@ -48,3 +48,16 @@ checkboxes.forEach((checkbox) => {
 //     let listItem = e.target.parentElement.parentElement;
 //     listItem.classList.add('checked');
 // }
+
+// modal
+const adicionar = document.getElementById('adicionar');
+const closeModalButton = document.getElementById('closeModalButton');
+const modal = document.getElementById('modal');
+
+adicionar.addEventListener('click', () => {
+    modal.style.display = 'block';
+});
+
+closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
