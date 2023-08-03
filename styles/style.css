@@ -1,6 +1,6 @@
 body {
     background-color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -52,13 +52,17 @@ a:hover {
 
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: justify;
     order: 0; /* Altera a ordem para aparecer à direita */
 }
 
 .header__menu {
     display: flex;
-    justify-content: center;
+    justify-content: justify;
+}
+
+.header__menu h1 {
+    padding: 0 0 0 20px;
 }
 
 .header__menu ul {
@@ -98,10 +102,11 @@ main {
 }
 
 .todo-list__header th {
-    font-size: 24px;
-    padding: 10px;
-    text-align: center;
-    background-color: #ffffff;
+    font-size: 16px;
+    padding: 10px 10px 10px 0;
+    text-align: justify;
+    /* background-color: #cccccc; */
+    color: #cccccc;
 }
 
 .todo-list__header td {
@@ -119,6 +124,26 @@ main {
     margin: 0;
 }
 
+/* Estilo para o checkbox */
 .todo-list__item input[type='checkbox'] {
-    margin: 0 0px 0 0;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #ccc; /* Adicione uma borda cinza */
+    appearance: none; /* Remova os estilos padrão do sistema */
+    cursor: pointer;
+    outline: none; /* Remova a borda azul ao receber foco */
+    position: relative;
+}
+
+/* Estilo para a caixa do checkbox quando estiver marcado */
+.todo-list__item input[type='checkbox']:checked {
+    background-color: #663399;
+}
+
+/* Estilo para a caixa do checkbox quando estiver desmarcado */
+.todo-list__item input[type='checkbox']:not(:checked) {
+    background-color: #fff; /* Remova o fundo cinza */
+    border: 2px solid #ccc; /* Adicione uma borda cinza */
 }
