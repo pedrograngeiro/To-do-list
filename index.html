@@ -6,59 +6,63 @@
         <link rel="stylesheet" href="/styles/style.css" />
     </head>
     <body>
-        <div class="container">
-            <div class="vertical-menu">
-                <ul>
-                    <li><a href="#">Opção 1</a></li>
-                    <li><a href="#">Opção 2</a></li>
-                    <li><a href="#">Opção 3</a></li>
-                </ul>
+        <div class="container-geral">
+            <div class="container-esquerdo">
+                <div class="vertical-menu">
+                    <ul>
+                        <li><a href="#">Opção 1</a></li>
+                        <li><a href="#">Opção 2</a></li>
+                        <li><a href="#">Opção 3</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <header class="header todo-list">
-                <nav class="header__menu">
-                    <h1>To do list</h1>
-                    <ul>
-                        <li><a href="#">Editar</a></li>
-                        <li><a href="#">Duplicar</a></li>
-                        <li><a href="#">Mudar Status</a></li>
-                    </ul>
-                </nav>
-            </header>
+            <div class="container-direito">
+                <header class="header todo-list">
+                    <nav class="header__menu">
+                        <h1>To do list</h1>
+                        <ul>
+                            <li><a href="#">Editar</a></li>
+                            <li><a href="#">Duplicar</a></li>
+                            <li><a href="#">Mudar Status</a></li>
+                        </ul>
+                    </nav>
+                </header>
 
-            <main>
-                <table class="todo-list__container">
-                    <thead>
-                        <tr class="todo-list__header">
-                            <th colspan="2">Lista de Afazeres</th>
-                        </tr>
-                        <tr class="todo-list__header">
-                            <td colspan="2">Descrição da lista</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="todo-list__item">
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td>
-                                <h3>Nome da tarefa</h3>
-                                <p>Descrição da tarefa</p>
-                            </td>
-                        </tr>
-                        <tr class="todo-list__item">
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td>
-                                <h3>Nome da tarefa</h3>
-                                <p>Descrição da tarefa</p>
-                            </td>
-                        </tr>
-                        <!-- Repita as linhas para as outras tarefas -->
-                    </tbody>
-                </table>
-            </main>
+                <main>
+                    <table class="todo-list__container">
+                        <thead>
+                            <tr class="todo-list__header">
+                                <th colspan="2">Lista de Afazeres</th>
+                            </tr>
+                            <tr class="todo-list__header">
+                                <td colspan="2">Descrição da lista</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="todo-list__item">
+                                <td>
+                                    <input type="checkbox" />
+                                </td>
+                                <td>
+                                    <h3>Nome da tarefa</h3>
+                                    <p>Descrição da tarefa</p>
+                                </td>
+                            </tr>
+                            <tr class="todo-list__item">
+                                <td>
+                                    <input type="checkbox" />
+                                </td>
+                                <td>
+                                    <h3>Nome da tarefa</h3>
+                                    <p>Descrição da tarefa</p>
+                                </td>
+                            </tr>
+                            <!-- Repita as linhas para as outras tarefas -->
+                        </tbody>
+                    </table>
+                </main>
+            </div>
         </div>
 
         <script src="/js/main.js"></script>

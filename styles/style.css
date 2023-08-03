@@ -15,16 +15,21 @@ a:hover {
     text-decoration: none;
 }
 
-.container {
+.container-geral {
     display: flex;
-    flex-direction: row; /* Ajusta a direção do flex container */
-    height: 100vh; /* Ocupa toda a altura da janela */
+}
+
+.container-esquerdo {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 80px;
+    background-color: #663399;
 }
 
 .vertical-menu {
-    background-color: #663399;
     width: 100px;
-    padding: 5px;
+    padding: 10px 0 0 5px;
 }
 
 .vertical-menu ul {
@@ -37,11 +42,18 @@ a:hover {
     margin-bottom: 10px;
 }
 
+.container-direito {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
 .header {
     display: flex;
-    justify-content: flex-end;
-
-    order: 1; /* Altera a ordem para aparecer à direita */
+    justify-content: center;
+    order: 0; /* Altera a ordem para aparecer à direita */
 }
 
 .header__menu {
@@ -77,7 +89,6 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
 }
 
 /* Estilos da tabela */
