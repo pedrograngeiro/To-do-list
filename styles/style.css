@@ -147,3 +147,15 @@ main {
     background-color: #fff; /* Remova o fundo cinza */
     border: 2px solid #ccc; /* Adicione uma borda cinza */
 }
+
+#adicionar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #663399;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
