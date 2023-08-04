@@ -64,21 +64,38 @@
                                         <h2>Adicionar Tarefa</h2>
                                         <div class="form-container">
                                             <form id="tarefaForm">
+                                                <label for="complete"
+                                                    >Complete:</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    id="complete"
+                                                />
+                                                <br />
+                                                <label for="dataTarefa"
+                                                    >Data de criação:</label
+                                                >
+                                                <input
+                                                    type="date"
+                                                    id="dataTarefa"
+                                                    required
+                                                />
+                                                <br />
+                                                <label for="homologacao"
+                                                    >Homologação:</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    id="homologacao"
+                                                    required
+                                                />
+                                                <br />
                                                 <label for="nomeTarefa"
                                                     >Nome da tarefa:</label
                                                 >
                                                 <input
                                                     type="text"
                                                     id="nomeTarefa"
-                                                    required
-                                                />
-                                                <br />
-                                                <label for="dataTarefa"
-                                                    >Data:</label
-                                                >
-                                                <input
-                                                    type="date"
-                                                    id="dataTarefa"
                                                     required
                                                 />
                                                 <br />
@@ -100,6 +117,14 @@
                                                     </option>
                                                 </select>
                                                 <br />
+                                                <label for="dataUpdate"
+                                                    >Data de atualização:</label
+                                                >
+                                                <input
+                                                    type="date"
+                                                    id="dataUpdate"
+                                                />
+                                                <br />
                                                 <label for="autorTarefa"
                                                     >Autor:</label
                                                 >
@@ -109,12 +134,17 @@
                                                     required
                                                 />
                                                 <br />
-                                                <button
-                                                    type="submit"
-                                                    id="submitButton"
+
+                                                <div
+                                                    class="form-container-salvar"
                                                 >
-                                                    Salvar
-                                                </button>
+                                                    <button
+                                                        type="submit"
+                                                        id="submitButton"
+                                                    >
+                                                        Salvar
+                                                    </button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
