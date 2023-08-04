@@ -43,8 +43,10 @@
                             <tr class="todo-list__header">
                                 <th></th>
                                 <th>Nome da tarefa</th>
-                                <th>Data</th>
+                                <th>Data de criação</th>
+                                <th>Homologação</th>
                                 <th>Status</th>
+                                <th>Data de atualização</th>
                                 <th>Autor</th>
                             </tr>
 
@@ -64,32 +66,6 @@
                                         <h2>Adicionar Tarefa</h2>
                                         <div class="form-container">
                                             <form id="tarefaForm">
-                                                <label for="complete"
-                                                    >Complete:</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    id="complete"
-                                                />
-                                                <br />
-                                                <label for="dataTarefa"
-                                                    >Data de criação:</label
-                                                >
-                                                <input
-                                                    type="date"
-                                                    id="dataTarefa"
-                                                    required
-                                                />
-                                                <br />
-                                                <label for="homologacao"
-                                                    >Homologação:</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    id="homologacao"
-                                                    required
-                                                />
-                                                <br />
                                                 <label for="nomeTarefa"
                                                     >Nome da tarefa:</label
                                                 >
@@ -99,6 +75,27 @@
                                                     required
                                                 />
                                                 <br />
+
+                                                <label for="homologacao"
+                                                    >Homologação:</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    id="homologacao"
+                                                    required
+                                                />
+                                                <br />
+
+                                                <label for="dataTarefa"
+                                                    >Data de criação:</label
+                                                >
+                                                <input
+                                                    type="date"
+                                                    id="dataTarefa"
+                                                    required
+                                                />
+                                                <br />
+
                                                 <label for="statusTarefa"
                                                     >Status:</label
                                                 >
@@ -161,7 +158,9 @@
                                     <p>Descrição da tarefa 1</p>
                                 </td>
                                 <td>03/08/2023</td>
+                                <td>Sistema</td>
                                 <td>Ativo</td>
+                                <td>04/08/2023</td>
                                 <td>Autor 1</td>
                             </tr>
                             <tr class="todo-list__item">
@@ -169,24 +168,28 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td>
-                                    <h3>Tarefa 2</h3>
-                                    <p>Descrição da tarefa 2</p>
+                                    <h3>Tarefa 1</h3>
+                                    <p>Descrição da tarefa 1</p>
                                 </td>
                                 <td>03/08/2023</td>
-                                <td>Homologado</td>
-                                <td>Autor 2</td>
+                                <td>Sistema</td>
+                                <td>Ativo</td>
+                                <td>04/08/2023</td>
+                                <td>Autor 1</td>
                             </tr>
                             <tr class="todo-list__item">
                                 <td>
                                     <input type="checkbox" />
                                 </td>
                                 <td>
-                                    <h3>Tarefa 3</h3>
-                                    <p>Descrição da tarefa 3</p>
+                                    <h3>Tarefa 1</h3>
+                                    <p>Descrição da tarefa 1</p>
                                 </td>
                                 <td>03/08/2023</td>
-                                <td>Finalizado</td>
-                                <td>Autor 3</td>
+                                <td>Sistema</td>
+                                <td>Ativo</td>
+                                <td>04/08/2023</td>
+                                <td>Autor 1</td>
                             </tr>
                             <!-- Repita as linhas para as outras tarefas -->
                         </tbody>

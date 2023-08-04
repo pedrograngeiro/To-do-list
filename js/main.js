@@ -29,7 +29,6 @@ document
         event.preventDefault();
 
         // pegar o dados dos campos forms
-        const complete = document.getElementById('complete').value;
         const dataTarefa = document.getElementById('dataTarefa').value;
         const homologacao = document.getElementById('homologacao').value;
         const nomeTarefa = document.getElementById('nomeTarefa').value;
@@ -39,7 +38,6 @@ document
 
         // criar um objeto JSON com os dados
         const formData = {
-            complete,
             dataTarefa,
             homologacao,
             nomeTarefa,
@@ -51,3 +49,29 @@ document
         // enviar os dados para o servidor
         console.log(JSON.stringify(formData));
     });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const statusTarefaField = document.getElementById('statusTarefa');
+    const dataUpdateLabel = document.querySelector('label[for="dataUpdate"]');
+    const dataUpdateField = document.getElementById('dataUpdate');
+
+    // Função para mostrar/ocultar o campo de Data de Atualização
+    function toggleDataUpdateField() {
+        if (statusTarefaField.value === 'Ativo') {
+            dataUpdateLabel.style.display = 'none';
+            dataUpdateField.style.display = 'none';
+        } else {
+            dataUpdateLabel.style.display = 'block';
+            dataUpdateField.style.display = 'block';
+        }
+    }
+
+    // Chamar a função quando o modal é aberto
+    adicionar.addEventListener('click', () => {
+        modal.style.display = 'block';
+        toggleDataUpdateField();
+    });
+
+    // Chamar a função quando o valor do campo Status muda
+    statusTarefaField.addEventListener('change', toggleDataUpdateField);
+});
