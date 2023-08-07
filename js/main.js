@@ -69,7 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const cell7 = newRow.insertCell(6);
 
         cell1.innerHTML = '<input type="checkbox">';
-        cell2.innerHTML = `<h3>${item.nomeTarefa}</h3><p>${item.homologacao}</p>`;
+        cell2.innerHTML = `<h3>${item.nomeTarefa}</h3>`;
+        // cell2.innerHTML = `<h3>${item.nomeTarefa}</h3><p>${item.homologacao}</p>`;
         cell3.textContent = item.dataTarefa;
         cell4.textContent = item.homologacao;
         cell5.textContent = item.statusTarefa;
