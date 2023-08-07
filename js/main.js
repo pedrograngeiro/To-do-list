@@ -55,6 +55,56 @@ document.addEventListener('DOMContentLoaded', function () {
     const dataUpdateLabel = document.querySelector('label[for="dataUpdate"]');
     const dataUpdateField = document.getElementById('dataUpdate');
 
+    const tableBody = document.getElementById('tableBody');
+
+    function addRowToTable(item) {
+        const newRow = tableBody.insertRow();
+
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+        const cell5 = newRow.insertCell(4);
+        const cell6 = newRow.insertCell(5);
+        const cell7 = newRow.insertCell(6);
+
+        cell1.innerHTML = '<input type="checkbox">';
+        cell2.innerHTML = `<h3>${item.nomeTarefa}</h3><p>${item.homologacao}</p>`;
+        cell3.textContent = item.dataTarefa;
+        cell4.textContent = item.homologacao;
+        cell5.textContent = item.statusTarefa;
+        cell6.textContent = item.dataUpdate;
+        cell7.textContent = item.autorTarefa;
+    }
+
+    document
+        .getElementById('tarefaForm')
+        .addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const dataTarefa = document.getElementById('dataTarefa').value;
+            const homologacao = document.getElementById('homologacao').value;
+            const nomeTarefa = document.getElementById('nomeTarefa').value;
+            const statusTarefa = document.getElementById('statusTarefa').value;
+            const dataUpdate = document.getElementById('dataUpdate').value;
+            const autorTarefa = document.getElementById('autorTarefa').value;
+
+            const formData = {
+                dataTarefa,
+                homologacao,
+                nomeTarefa,
+                statusTarefa,
+                dataUpdate,
+                autorTarefa,
+            };
+
+            addRowToTable(formData);
+
+            modal.style.display = 'none';
+
+            document.getElementById('tarefaForm').reset();
+        });
+
     // Função para mostrar/ocultar o campo de Data de Atualização
     function toggleDataUpdateField() {
         if (statusTarefaField.value === 'Ativo') {
