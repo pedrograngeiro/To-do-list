@@ -169,6 +169,43 @@
             </div>
         </div>
 
+        <!-- Inclua o SDK do Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+        <script type="module">
+            import { firebaseConfig } from './js/firebaseConfig.js';
+
+            firebase.initializeApp(firebaseConfig());
+
+            const database = firebase.database();
+
+            const listaRef = database.ref('lista');
+
+            listaRef
+                .once('value')
+                .then((snapshot) => {
+                    const lista = snapshot.val();
+
+                    for (const itemKey in lista) {
+                        if (lista.hasOwnProperty(itemKey)) {
+                            const item = lista[itemKey];
+                            console.log('Nome da tarefa:', item.nome_task);
+                            console.log('Homologação:', item.homologacao);
+                            console.log('Status:', item.status);
+                            console.log('Criado em:', item.created);
+                            console.log('Atualizado em:', item.update);
+                            console.log('Completo:', item.complete);
+                            console.log('Usuário:', item.user);
+                            console.log('---');
+                        }
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        </script>
+
         <script src="/js/main.js"></script>
         <script
             src="https://kit.fontawesome.com/e2431f35f6.js"
