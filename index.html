@@ -206,6 +206,20 @@
                 });
         </script>
 
+        <script type="module">
+            import { adicionarNovaTarefa } from './js/crud.js';
+
+            const novaTarefaData = {
+                nome_task: 'Tarefa Importante',
+                homologacao: true,
+                status: 'Concluída',
+                complete: true,
+                user: 'João',
+            };
+
+            adicionarNovaTarefa(novaTarefaData);
+        </script>
+
         <script src="/js/main.js"></script>
         <script
             src="https://kit.fontawesome.com/e2431f35f6.js"
