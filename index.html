@@ -175,6 +175,7 @@
 
         <script type="module">
             import { firebaseConfig } from './js/firebaseConfig.js';
+            import { listarTarefas } from './js/crud.js';
 
             firebase.initializeApp(firebaseConfig());
 
@@ -182,43 +183,22 @@
 
             const listaRef = database.ref('lista');
 
-            listaRef
-                .once('value')
-                .then((snapshot) => {
-                    const lista = snapshot.val();
-
-                    for (const itemKey in lista) {
-                        if (lista.hasOwnProperty(itemKey)) {
-                            const item = lista[itemKey];
-                            console.log('Nome da tarefa:', item.nome_task);
-                            console.log('Homologação:', item.homologacao);
-                            console.log('Status:', item.status);
-                            console.log('Criado em:', item.created);
-                            console.log('Atualizado em:', item.update);
-                            console.log('Completo:', item.complete);
-                            console.log('Usuário:', item.user);
-                            console.log('---');
-                        }
-                    }
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+            listarTarefas(database);
         </script>
 
-        <script type="module">
+        <!-- <script type="module">
             import { adicionarNovaTarefa } from './js/crud.js';
 
             const novaTarefaData = {
                 nome_task: 'Tarefa Importante',
-                homologacao: true,
-                status: 'Concluída',
-                complete: true,
-                user: 'João',
+                homologacao: 'Sistema',
+                status: 'Ativo',
+                complete: false,
+                user: 'Pedro Grangeiro',
             };
 
             adicionarNovaTarefa(novaTarefaData);
-        </script>
+        </script> -->
 
         <script src="/js/main.js"></script>
         <script
