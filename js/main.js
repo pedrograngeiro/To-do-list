@@ -126,3 +126,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // Chamar a função quando o valor do campo Status muda
     statusTarefaField.addEventListener('change', toggleDataUpdateField);
 });
+
+import { adicionarNovaTarefa } from './crud.js';
+
+const tarefaForm = document.getElementById('tarefaForm');
+
+tarefaForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const nomeTarefa = document.getElementById('nomeTarefa').value;
+    const homologacao = document.getElementById('homologacao').value;
+    const statusTarefa = document.getElementById('statusTarefa').value;
+    const dataUpdate = document.getElementById('dataUpdate').value;
+    const autorTarefa = document.getElementById('autorTarefa').value;
+
+    const novaTarefadata = {
+        nome_task: nomeTarefa,
+        homologacao: homologacao,
+        status: statusTarefa,
+        update: dataUpdate,
+        user: autorTarefa,
+    };
+
+    await adicionarNovaTarefa(novaTarefadata);
+
+    tarefaForm.reset();
+});

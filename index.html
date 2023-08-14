@@ -173,6 +173,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
 
+        <!-- Get -->
         <script type="module">
             import { firebaseConfig } from './js/firebaseConfig.js';
             import { listarTarefas } from './js/crud.js';
@@ -186,6 +187,7 @@
             listarTarefas(database);
         </script>
 
+        <!-- Post -->
         <!-- <script type="module">
             import { adicionarNovaTarefa } from './js/crud.js';
 
@@ -200,7 +202,11 @@
             adicionarNovaTarefa(novaTarefaData);
         </script> -->
 
-        <script src="/js/main.js"></script>
+        <script type="module">
+            import { adicionarNovaTarefa } from './js/crud.js';
+        </script>
+
+        <script type="module" src="/js/main.js"></script>
         <script
             src="https://kit.fontawesome.com/e2431f35f6.js"
             crossorigin="anonymous"
