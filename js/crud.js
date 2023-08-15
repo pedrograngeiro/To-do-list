@@ -55,3 +55,15 @@ export const listarTarefas = (database) => {
 
     listarTarefas(database);
 })();
+
+// (function () {
+//     const novaTarefaData = {
+//         nome_task: 'Lorem Ipsum',
+//         homologacao: 'Lorem Ipsum',
+//         status: 'Lorem Ipsum',
+//         complete: false,
+//         user: 'LLLLL',
+//     };
+
+//     adicionarNovaTarefa(novaTarefaData);
+// })();
