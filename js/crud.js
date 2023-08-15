@@ -1,3 +1,5 @@
+import { firebaseConfig } from './firebaseConfig.js';
+
 export const adicionarNovaTarefa = async (data) => {
     // Altere o parâmetro de 'tarefa' para 'data'
     const novaTarefa = {
@@ -43,3 +45,13 @@ export const listarTarefas = (database) => {
         });
     });
 };
+
+(function () {
+    firebase.initializeApp(firebaseConfig());
+
+    const database = firebase.database();
+
+    const listaRef = database.ref('lista');
+
+    listarTarefas(database);
+})();
