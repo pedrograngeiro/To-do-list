@@ -26,6 +26,8 @@ export const adicionarNovaTarefa = async (data) => {
 };
 
 export const listarTarefas = (database) => {
+    // Limpar a tabela
+
     const listaRef = database.ref('lista');
 
     const tableBody = document.querySelector('#item-table tbody');

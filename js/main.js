@@ -148,6 +148,12 @@ tarefaForm.addEventListener('submit', async (event) => {
         user: autorTarefa,
     };
 
+    // Limpar tabela antes de enviar para o servidor
+    const tableBody = document.getElementById('tableBody');
+    tableBody.innerHTML = '';
+
+    // Enviar dados para o servidor
+
     await adicionarNovaTarefa(novaTarefadata);
 
     tarefaForm.reset();
