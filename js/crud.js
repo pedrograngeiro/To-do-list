@@ -28,19 +28,36 @@ export const adicionarNovaTarefa = async (data) => {
 export const listarTarefas = (database) => {
     const listaRef = database.ref('lista');
 
+    const tableBody = document.querySelector('#item-table tbody');
+
     return new Promise((resolve, reject) => {
         listaRef.on('value', (snapshot) => {
             const lista = snapshot.val();
             for (const itemKey in lista) {
                 const item = lista[itemKey];
-                console.log('Nome da tarefa:', item.nome_task);
-                console.log('Homologação:', item.homologacao);
-                console.log('Status:', item.status);
-                console.log('Criado em:', item.created);
-                console.log('Atualizado em:', item.update);
-                console.log('Completo:', item.complete);
-                console.log('Usuário:', item.user);
-                console.log('---');
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td>Vazio</td>
+                    <td>${item.nome_task}</td>
+                    <td>${item.homologacao}</td>
+                    <td>${item.status}</td>
+                    <td>${item.created}</td>
+                    <td>${item.update}</td>
+                    <td>${item.complete}</td>
+                    <td>${item.user}</td>
+                `;
+
+                tableBody.appendChild(row);
+
+                // console.log('Nome da tarefa:', item.nome_task);
+                // console.log('Homologação:', item.homologacao);
+                // console.log('Status:', item.status);
+                // console.log('Criado em:', item.created);
+                // console.log('Atualizado em:', item.update);
+                // console.log('Completo:', item.complete);
+                // console.log('Usuário:', item.user);
+                // console.log('---');
             }
         });
     });
