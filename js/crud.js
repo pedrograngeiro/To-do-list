@@ -38,9 +38,10 @@ export const listarTarefas = (database) => {
             for (const itemKey in lista) {
                 const item = lista[itemKey];
                 const row = document.createElement('tr');
+                row.classList.add('todo-list__item');
 
                 row.innerHTML = `
-                    <td>Vazio</td>
+                    <td><input type="checkbox"></td>
                     <td>${item.nome_task}</td>
                     <td>${item.homologacao}</td>
                     <td>${item.status}</td>
@@ -51,15 +52,6 @@ export const listarTarefas = (database) => {
                 `;
 
                 tableBody.appendChild(row);
-
-                // console.log('Nome da tarefa:', item.nome_task);
-                // console.log('Homologação:', item.homologacao);
-                // console.log('Status:', item.status);
-                // console.log('Criado em:', item.created);
-                // console.log('Atualizado em:', item.update);
-                // console.log('Completo:', item.complete);
-                // console.log('Usuário:', item.user);
-                // console.log('---');
             }
         });
     });

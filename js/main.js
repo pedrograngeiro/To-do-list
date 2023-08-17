@@ -131,7 +131,7 @@ import { adicionarNovaTarefa } from './crud.js';
 
 const tarefaForm = document.getElementById('tarefaForm');
 
-tarefaForm.addEventListener('submit', async (event) => {
+tarefaForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const nomeTarefa = document.getElementById('nomeTarefa').value;
@@ -154,7 +154,7 @@ tarefaForm.addEventListener('submit', async (event) => {
 
     // Enviar dados para o servidor
 
-    await adicionarNovaTarefa(novaTarefadata);
+    adicionarNovaTarefa(novaTarefadata);
 
     tarefaForm.reset();
 });
