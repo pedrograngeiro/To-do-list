@@ -92,7 +92,29 @@ a:hover {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    padding: 20px;
+}
+
+main div {
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    background-color: #663399;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+main div th,
+td {
+    border: 1px solid black; /* Borda de 1px sólida, preta */
+    padding: 8px; /* Espaçamento interno nas células */
+    text-align: left; /* Alinhamento do conteúdo */
+}
+
+main div table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
 /* Estilos da tabela */
