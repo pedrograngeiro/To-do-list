@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     statusTarefaField.addEventListener('change', toggleDataUpdateField);
 });
 
-import { adicionarNovaTarefa } from './crud.js';
+import { adicionarNovaTarefa } from '../modules/banco/crud.js';
 
 const tarefaForm = document.getElementById('tarefaForm');
 

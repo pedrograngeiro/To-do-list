@@ -7,8 +7,11 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         />
-        <link rel="stylesheet" href="/styles/style.css" />
-        <link rel="stylesheet" href="/styles/icons.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/icons.css" />
+        <link rel="stylesheet" href="modules/main/main.css" />
+        <link rel="stylesheet" href="modules/table/table.css" />
+        <link rel="stylesheet" href="modules/form/form.css" />
     </head>
     <body>
         <div class="container-geral">
@@ -154,200 +157,13 @@
                 </main> -->
 
                 <main>
-                    <button id="adicionar">
+                    <button id="btn">
                         <i class="fa-solid fa-square-plus"></i>
                     </button>
 
+                    <div id="conteudo"> </div>
+
                     <div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td colspan="2">
-                                        <span id="barra">
-                                            <span id="table-inside">Nome:</span>
-                                        </span>
-                                    </td>
-                                    <td rowspan="2" class="rowspan">
-                                        <i
-                                            class="fa-solid fa-i icons-circle"
-                                        ></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Task: </td>
-                                    <td rowspan="3" class="rowspan">
-                                        <i class="fa-solid fa-circle"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Inicio: </td>
-                                    <td class="space-reserved"
-                                        >Espaço reservado</td
-                                    >
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Row 4, Cell 1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td colspan="2">
-                                        <span id="barra">
-                                            <span id="table-inside">Nome:</span>
-                                        </span>
-                                    </td>
-                                    <td rowspan="2" class="rowspan">
-                                        <i
-                                            class="fa-solid fa-i icons-circle"
-                                        ></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Task: </td>
-                                    <td rowspan="3" class="rowspan">
-                                        <i class="fa-solid fa-circle"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Inicio: </td>
-                                    <td class="space-reserved"
-                                        >Espaço reservado</td
-                                    >
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Row 4, Cell 1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td colspan="2">
-                                        <span id="barra">
-                                            <span id="table-inside">Nome:</span>
-                                        </span>
-                                    </td>
-                                    <td rowspan="2" class="rowspan">
-                                        <i
-                                            class="fa-solid fa-i icons-circle"
-                                        ></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Task: </td>
-                                    <td rowspan="3" class="rowspan">
-                                        <i class="fa-solid fa-circle"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Inicio: </td>
-                                    <td class="space-reserved"
-                                        >Espaço reservado</td
-                                    >
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Row 4, Cell 1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td colspan="2">
-                                        <span id="barra">
-                                            <span id="table-inside">Nome:</span>
-                                        </span>
-                                    </td>
-                                    <td rowspan="2" class="rowspan">
-                                        <i
-                                            class="fa-solid fa-i icons-circle"
-                                        ></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Task: </td>
-                                    <td rowspan="3" class="rowspan">
-                                        <i class="fa-solid fa-circle"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Inicio: </td>
-                                    <td class="space-reserved"
-                                        >Espaço reservado</td
-                                    >
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Row 4, Cell 1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td colspan="2">
-                                        <span id="barra">
-                                            <span id="table-inside">Nome:</span>
-                                        </span>
-                                    </td>
-                                    <td rowspan="2" class="rowspan">
-                                        <i
-                                            class="fa-solid fa-i icons-circle"
-                                        ></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Task: </td>
-                                    <td rowspan="3" class="rowspan">
-                                        <i class="fa-solid fa-circle"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Inicio: </td>
-                                    <td class="space-reserved"
-                                        >Espaço reservado</td
-                                    >
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Row 4, Cell 1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
                         <table>
                             <tbody>
                                 <tr>
@@ -390,11 +206,12 @@
             </div>
         </div>
 
-        <script type="module" src="./js/dependencias.js"></script>
+        <script type="module" src="./modules/banco/dependencias.js"></script>
 
-        <script type="module" src="./js/crud.js"></script>
+        <script type="module" src="modules/banco/crud.js"></script>
 
         <script type="module" src="/js/main.js"></script>
+        <script type="text/javascript" src="modelo/modelo-de-card.js"></script>
 
         <script></script>
 

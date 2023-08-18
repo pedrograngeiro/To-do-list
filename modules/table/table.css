@@ -1,0 +1,37 @@
+/* Tabela card */
+
+main div table th,
+td {
+    padding: 10px 25px 10px 25px; /* Espaçamento interno nas células */
+    text-align: left; /* Alinhamento do conteúdo */
+}
+
+main div table td.rowspan {
+    vertical-align: middle;
+    text-align: center;
+}
+
+main div table td span#barra {
+    display: block;
+    height: 50px;
+    border-left: 6px solid #ff66cc;
+}
+main div table td span span#table-inside {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    padding-left: 5px;
+}
+/* Estilos da tabela */
+
+.todo-list__container {
+    flex: 1;
+}
+
+.todo-list__item:last-child td {
+    border-bottom: none;
+}
+
+.todo_list__item p {
+    margin: 0;
+}
