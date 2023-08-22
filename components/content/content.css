@@ -1,0 +1,7 @@
+.content-button {
+    display: flex;
+    flex-direction: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}

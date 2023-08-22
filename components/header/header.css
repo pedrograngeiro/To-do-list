@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: justify;
+    order: 0; /* Altera a ordem para aparecer à direita */
+}
+
+.header__menu {
+    display: flex;
+    justify-content: justify;
+    flex-wrap: column;
+}
+
+.header__menu h1 {
+    padding: 0 0 0 20px;
+}
+
+.header__menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 25px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.header__menu li {
+    margin: 0 0 0 20px;
+}
+
+.header__menu a {
+    color: #111010;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header__menu a:hover {
+    color: #ffddaa;
+    text-decoration: none;
+}
