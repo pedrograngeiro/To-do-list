@@ -1,0 +1,121 @@
+:root {
+    --dark-grey: #9fabae;
+    --light-grey: #dfe3e4;
+    --green: #2ecc21;
+    --red: #ff005a;
+    --yello: #fae500;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas com largura igual */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.grid-item {
+    background-color: #663399;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card form {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex-direction: column;
+    width: 100%;
+}
+.card form .input_texto {
+    border: none;
+}
+.card form p:before {
+    color: #fff;
+    font-size: 1.2rem;
+    content: attr(data-user);
+}
+.titulo_e_progress {
+    display: flex;
+    justify-content: space-between;
+}
+.titulo_e_progress .titulo_task {
+    display: flex;
+    gap: 5px;
+    width: 280px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+    list-style: none;
+}
+.opcional {
+    position: relative;
+    display: inline-block;
+    background-color: var(--light-grey);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.progress {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 120px;
+}
+.opcional .progress.active {
+    display: block;
+}
+.container ul {
+    list-style: none;
+    display: flex;
+    width: 500px;
+    margin-top: 60px;
+    padding: 0;
+}
+.container ul li {
+    position: relative;
+    color: var(--dark-grey);
+    width: 25%;
+    text-align: center;
+}
+
+.container ul li:before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: attr(data-step);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--light-grey);
+    color: var(--dark-grey);
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 20px);
+    z-index: 80;
+}
+.container ul li:after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: var(--light-grey);
+    position: absolute;
+    top: -32.2px;
+    left: -50%;
+}
+.container ul li:first-child:after {
+    width: 0;
+}
+.container ul li.active:before {
+    background: var(--green);
+    color: #fff;
+}
+.container ul li.active:after {
+    background: var(--green);
+}
+.container ul li.active {
+    color: var(--green);
+}
