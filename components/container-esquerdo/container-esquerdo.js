@@ -10,5 +10,3 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error loading content:', error);
         });
 });
-
-console.log('teste');
