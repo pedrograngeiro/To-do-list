@@ -9,11 +9,86 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p
-            >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
-            nihil, quo, dolor reiciendis omnis animi sit atque quaerat
-            repellendus autem libero adipisci aperiam dolorum dolores illo
-            praesentium explicabo quas eveniet?</p
-        >
+        <p>
+            <form id="tarefaForm">
+                <label for="nomeTarefa"
+                    >Nome da tarefa:</label
+                >
+                <input
+                    type="text"
+                    id="nomeTarefa"
+                    required
+                />
+                <br />
+
+                <label for="homologacao"
+                    >Homologação:</label
+                >
+                <input
+                    type="text"
+                    id="homologacao"
+                    required
+                />
+                <br />
+
+                <label for="dataTarefa"
+                    >Data de criação:</label
+                >
+                <input
+                    type="date"
+                    id="dataTarefa"
+                    required
+                />
+                <br />
+
+                <label for="statusTarefa"
+                    >Status:</label
+                >
+                <select
+                    id="statusTarefa"
+                    required
+                >
+                    <option value="Ativo">
+                        Ativo
+                    </option>
+                    <option value="Homologado">
+                        Homologado
+                    </option>
+                    <option value="Finalizado">
+                        Finalizado
+                    </option>
+                </select>
+                <br />
+                <label for="dataUpdate"
+                    >Data de atualização:</label
+                >
+                <input
+                    type="date"
+                    id="dataUpdate"
+                />
+                <br />
+                <label for="autorTarefa"
+                    >Autor:</label
+                >
+                <input
+                    type="text"
+                    id="autorTarefa"
+                    required
+                />
+                <br />
+
+                <div
+                    class="form-container-salvar"
+                >
+                    <button
+                        type="submit"
+                        id="submitButton"
+                    >
+                        Salvar
+                    </button>
+                </div>
+            </form>
+        </p>
+        
     </div>
 </div>
