@@ -8,7 +8,8 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colunas com largura igual */
-    gap: 20px; /* Espaçamento entre os itens */
+    gap: 10px; /* Espaçamento entre os itens */
+    margin: 10px 0 0 10px;
 }
 
 .grid-item {
@@ -17,6 +18,7 @@
     padding: 10px;
     text-align: center;
     border-radius: 10px;
+    width: 320px;
 }
 
 .card form {
@@ -57,6 +59,7 @@
     width: 35px;
     height: 35px;
     cursor: pointer;
+    content: attr(data-info);
 }
 .progress {
     display: none;
@@ -72,7 +75,7 @@
 .container ul {
     list-style: none;
     display: flex;
-    width: 500px;
+    width: 300px;
     margin-top: 60px;
     padding: 0;
 }
@@ -119,4 +122,17 @@
 }
 .container ul li.active {
     color: var(--green);
+}
+
+.data_span {
+    display: inline-block; /* Permite definir largura e altura */
+    width: 100px;
+}
+
+#card-oculto {
+    display: none;
+}
+
+#card-oculto.active {
+    display: block;
 }
