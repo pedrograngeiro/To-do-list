@@ -23,7 +23,7 @@
     color: #fff;
 }
 
-.card form {
+.card {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -32,25 +32,25 @@
     width: 100%;
 }
 
-.card form .input_texto {
+.card .input_texto {
     border: none;
 }
 
-.card form p:before {
+.card h4:before {
     content: attr(data-user);
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .titulo_e_progress {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .titulo_e_progress .titulo_task {
     display: flex;
     gap: 5px;
-    width: 280px;
+    width: 260px;
     border-radius: 5px;
     padding-left: 10px;
     border: none;
@@ -150,13 +150,15 @@
 }
 
 #card-oculto.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .texto_task {
     resize: vertical; /* Permite redimensionamento vertical */
-    width: 50%;
+    width: 80%;
     padding: 10px;
+    margin-left: 10px;
     border: 1px solid var(--light-grey);
     border-radius: 5px;
     font-size: 14px;
@@ -167,4 +169,10 @@
     margin-top: 10px;
     font-size: 12px;
     color: var(--dark-grey);
+}
+
+.card p {
+    display: block;
+    align-self: start;
+    padding-left: 10px;
 }
