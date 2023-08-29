@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             contentElement.innerHTML = content;
 
             const cardOculto = document.getElementById('card-oculto');
-            const cardGeral = document.querySelector('.card');
+            const cardGeral = document.querySelector('.opcional');
 
             let isCardActive = false; // Inicialmente, o card não está ativo
 

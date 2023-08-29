@@ -3,12 +3,13 @@
     --light-grey: #dfe3e4;
     --green: #2ecc21;
     --red: #ff005a;
-    --yello: #fae500;
+    --yellow: #fae500;
 }
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas com largura igual */
-    gap: 10px; /* Espaçamento entre os itens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin: 10px 0 0 10px;
 }
 
@@ -19,28 +20,33 @@
     text-align: center;
     border-radius: 10px;
     width: 320px;
+    color: #fff;
 }
 
 .card form {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     flex-direction: column;
+    position: relative;
     width: 100%;
 }
+
 .card form .input_texto {
     border: none;
 }
+
 .card form p:before {
+    content: attr(data-user);
     color: #fff;
     font-size: 1.2rem;
-    content: attr(data-user);
 }
+
 .titulo_e_progress {
     display: flex;
     justify-content: space-between;
 }
+
 .titulo_e_progress .titulo_task {
     display: flex;
     gap: 5px;
@@ -50,17 +56,25 @@
     border: none;
     list-style: none;
 }
+
 .opcional {
-    position: relative;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--light-grey);
     border: none;
     border-radius: 50%;
     width: 35px;
     height: 35px;
     cursor: pointer;
-    content: attr(data-info);
 }
+
+.opcional span {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
 .progress {
     display: none;
     position: absolute;
@@ -69,9 +83,11 @@
     width: 120px;
     z-index: 1;
 }
+
 .opcional .progress.active {
     display: block;
 }
+
 .container ul {
     list-style: none;
     display: flex;
@@ -79,6 +95,7 @@
     margin-top: 60px;
     padding: 0;
 }
+
 .container ul li {
     position: relative;
     color: var(--dark-grey);
@@ -87,10 +104,10 @@
 }
 
 .container ul li:before {
+    content: attr(data-step);
     display: flex;
     align-items: center;
     justify-content: center;
-    content: attr(data-step);
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -101,6 +118,7 @@
     left: calc(50% - 20px);
     z-index: 80;
 }
+
 .container ul li:after {
     content: '';
     width: 100%;
@@ -110,22 +128,20 @@
     top: -32.2px;
     left: -50%;
 }
+
 .container ul li:first-child:after {
     width: 0;
 }
-.container ul li.active:before {
+
+.container ul li.active:before,
+.container ul li.active:after,
+.container ul li.active {
     background: var(--green);
     color: #fff;
 }
-.container ul li.active:after {
-    background: var(--green);
-}
-.container ul li.active {
-    color: var(--green);
-}
 
 .data_span {
-    display: inline-block; /* Permite definir largura e altura */
+    display: inline-block;
     width: 100px;
 }
 
@@ -135,4 +151,20 @@
 
 #card-oculto.active {
     display: block;
+}
+
+.texto_task {
+    resize: vertical; /* Permite redimensionamento vertical */
+    width: 50%;
+    padding: 10px;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.atualizacao-data {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--dark-grey);
 }
