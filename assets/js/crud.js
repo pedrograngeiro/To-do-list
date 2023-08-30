@@ -21,12 +21,18 @@ export const listarTarefas = (database) => {
     });
 };
 
-(function () {
-    firebase.initializeApp(firebaseConfig());
+// (function () {
+//     firebase.initializeApp(firebaseConfig());
 
-    const database = firebase.database();
+//     const database = firebase.database();
 
-    const listaRef = database.ref('lista');
+//     const listaRef = database.ref('lista');
 
-    listarTarefas(database);
-})();
+//     // listarTarefas(database);
+// })();
+
+firebase.initializeApp(firebaseConfig());
+
+const database = firebase.database();
+
+export default database;

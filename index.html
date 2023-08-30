@@ -15,6 +15,10 @@
             rel="stylesheet"
             href="components/container-middle/container-middle.css"
         />
+        <link
+            rel="stylesheet"
+            href="components/container-main/container-main.css"
+        />
         <link rel="stylesheet" href="components/footer/footer.css" />
     </head>
     <body>
@@ -26,7 +30,7 @@
                 <main id="content"></main>
             </div>
             <!-- <div id="container-middle"> </div> -->
-            <div id="container-middle-output"></div>
+            <div id="grid-container-main"></div>
         </div>
 
         <footer id="footer"></footer>
@@ -34,29 +38,15 @@
         <script src="components/header/header.js"></script>
         <script src="components/container-esquerdo/container-esquerdo.js"></script>
         <!-- <script src="components/container-middle/container-middle.js"></script> -->
-        <script src="components/container-middle/container-middle-output.js"></script>
+        <!-- <script src="components/container-middle/container-middle-output.js"></script> -->
+        <script
+            type="module"
+            src="components/container-main/container-main.js"
+        ></script>
         <script src="components/content/content.js"></script>
         <script src="components/footer/footer.js"></script>
 
         <script type="module" src="assets/js/dependencias.js"></script>
-
-        <!-- <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const firebaseConfig = {
-                    apiKey: 'AIzaSyBoeV7-6q1KcxYVqkWTMJd2MpTwHLXJ65s',
-                    authDomain: 'tokamban-65719.firebaseapp.com',
-                    databaseURL:
-                        'https://tokamban-65719-default-rtdb.firebaseio.com',
-                    projectId: 'tokamban-65719',
-                    storageBucket: 'tokamban-65719.appspot.com',
-                    messagingSenderId: '779921721295',
-                    appId: '1:779921721295:web:d81783eb961694247734ba',
-                    measurementId: 'G-VFMDCXXTE2',
-                };
-
-                firebase.initializeApp(firebaseConfig);
-            });
-        </script> -->
 
         <script type="module" src="assets/js/crud.js"></script>
     </body>

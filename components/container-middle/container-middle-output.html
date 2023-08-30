@@ -1,39 +1,35 @@
-<div class="grid-container">
-    <div class="grid-item">
-        <div class="card">
-            <h4 id="user_id" class="nome" data-user="0rakul0"> </h4
-            ><div class="titulo_e_progress">
-                <span id="task" class="titulo_task">Nome da task</span>
+<div class="grid-item">
+    <div class="card">
+        <h4 id="user_id" class="nome" data-user="0rakul0"> </h4
+        ><div class="titulo_e_progress">
+            <span id="task" class="titulo_task">Nome da task</span>
 
-                <div class="opcional">
-                    <span id="info-task">E</span>
-                </div>
+            <div class="opcional">
+                <span id="info-task">E</span>
             </div>
+        </div>
+        <p>
+            Data Inicio:
+            <span id="inicio-data" class="data_span">2023-08-28</span>
+        </p>
+        <div id="card-oculto" class="">
+            <div class="container">
+                <ul class="progressbar">
+                    <li data-step="E" class="active"></li>
+                    <li data-step="D"></li>
+                    <li data-step="H"></li>
+                    <li data-step="P"></li>
+                </ul>
+            </div>
+            <textarea
+                maxlength="250"
+                class="texto_task"
+                id="texto_task"
+            ></textarea>
             <p>
-                Data Inicio:
-                <span id="inicio-data" class="data_span">2023-08-28</span>
+                Data Atualização:
+                <span id="atualizacao-data" class="data_span">2023-08-28</span>
             </p>
-            <div id="card-oculto" class="">
-                <div class="container">
-                    <ul class="progressbar">
-                        <li data-step="E" class="active"></li>
-                        <li data-step="D"></li>
-                        <li data-step="H"></li>
-                        <li data-step="P"></li>
-                    </ul>
-                </div>
-                <textarea
-                    maxlength="250"
-                    class="texto_task"
-                    id="texto_task"
-                ></textarea>
-                <p>
-                    Data Atualização:
-                    <span id="atualizacao-data" class="data_span"
-                        >2023-08-28</span
-                    >
-                </p>
-            </div>
         </div>
     </div>
 </div>
