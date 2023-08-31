@@ -6,33 +6,39 @@ export const listarTarefas = (database) => {
     return new Promise((resolve, reject) => {
         listaRef.on('value', (snapshot) => {
             const lista = snapshot.val();
-            for (const itemKey in lista) {
-                const item = lista[itemKey];
-                console.log('Nome da Tarefa:', item.nome_task);
-                console.log('Homologação:', item.homologacao);
-                console.log('Status:', item.status);
-                console.log('Criado em:', item.created);
-                console.log('Atualizado em:', item.update);
-                console.log('Completo:', item.complete);
-                console.log('Usuário:', item.user);
-                console.log('---'); // Separador entre os registros
-            }
+            const tarefas = Object.values(lista); // Convertendo o objeto para array
+            resolve(tarefas);
         });
     });
 };
 
-// (function () {
-//     firebase.initializeApp(firebaseConfig());
-
-//     const database = firebase.database();
-
+// export const listarTarefas = (database) => {
 //     const listaRef = database.ref('lista');
 
-//     // listarTarefas(database);
-// })();
+//     return new Promise((resolve, reject) => {
+//         listaRef.on('value', (snapshot) => {
+//             const lista = snapshot.val();
+//             for (const itemKey in lista) {
+//                 const item = lista[itemKey];
+//                 console.log('Nome da Tarefa:', item.nome_task);
+//                 console.log('Homologação:', item.homologacao);
+//                 console.log('Status:', item.status);
+//                 console.log('Criado em:', item.created);
+//                 console.log('Atualizado em:', item.update);
+//                 console.log('Completo:', item.complete);
+//                 console.log('Usuário:', item.user);
+//                 console.log('---'); // Separador entre os registros
+//             }
+//         });
+//     });
+// };
 
-firebase.initializeApp(firebaseConfig());
+(function () {
+    firebase.initializeApp(firebaseConfig());
 
-const database = firebase.database();
+    const database = firebase.database();
 
-export default database;
+    const listaRef = database.ref('lista');
+
+    // listarTarefas(database);
+})();
