@@ -21,24 +21,27 @@
                 />
                 <br />
 
-                <label for="homologacao"
-                    >Homologação:</label
-                >
-                <input
-                    type="text"
-                    id="homologacao"
-                    required
-                />
-                <br />
+                <label for="origemProjeto">
+                    Origem do projeto:
+                </label>
+                <select
+                    id="origemProjeto"
+                    required>
+                    <option value="interno">Interno</option>
+                    <option value="tst">TST</option>
+                    <option value="agu">AGU</option>
+                    <option value="externo">Outros</option>
+                </select>
 
-                <label for="dataTarefa"
+
+                <!-- <label for="dataTarefa"
                     >Data de criação:</label
                 >
                 <input
                     type="date"
                     id="dataTarefa"
                     required
-                />
+                /> -->
                 <br />
 
                 <label for="statusTarefa"
@@ -48,25 +51,36 @@
                     id="statusTarefa"
                     required
                 >
-                    <option value="Ativo">
-                        Ativo
+                    <option value="Em andamento">
+                        Em andamento
+                    </option>
+                    <option value="Desenvolvimento">
+                        Desenvolvimento
                     </option>
                     <option value="Homologado">
                         Homologado
                     </option>
-                    <option value="Finalizado">
-                        Finalizado
+                    <option value="Producao">
+                        Produção
                     </option>
                 </select>
                 <br />
-                <label for="dataUpdate"
+
+                <label for="mensagemTarefa"
+                    >Descrição:</label>
+                    <textarea
+                    maxlength="250"
+                    id="mensagem"
+                ></textarea>
+                <br />
+                <!-- <label for="dataUpdate"
                     >Data de atualização:</label
                 >
                 <input
                     type="date"
                     id="dataUpdate"
                 />
-                <br />
+                <br /> -->
                 <label for="autorTarefa"
                     >Autor:</label
                 >
