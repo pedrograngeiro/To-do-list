@@ -75,6 +75,19 @@
     font-weight: 500;
 }
 
+.inicio-e-origem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inicio-e-origem p {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 5px 0 5 0;
+}
+
 .progress {
     display: none;
     position: absolute;
@@ -140,11 +153,6 @@
     color: #fff;
 }
 
-.data_span {
-    display: inline-block;
-    width: 100px;
-}
-
 #card-oculto {
     display: none;
 }
@@ -173,6 +181,6 @@
 
 .card p {
     display: block;
-    align-self: start;
+    align-self: center;
     padding-left: 10px;
 }

@@ -28,10 +28,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <span id='info-task'>${item.status}</span>
                                 </div>
                             </div>
-                            <p>
-                                Data Inicio:
-                                <span id='inicio-data' class='data_span'>${item.created}</span>
-                            </p>
+                            <div class='inicio-e-origem'>
+                                <p>
+                                    Data Inicio:
+                                    <span id='inicio-data' class='data_span'>${item.created}</span>
+                                </p>
+                                <p>
+                                    Origem:
+                                    <span id='origem' class='origem'>${item.origem}</span>
+                                </p>
+                            </div>
                             <div id='' class=''>
                                 <div class='container'>
                                     <ul class='progressbar'>
