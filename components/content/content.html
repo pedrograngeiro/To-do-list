@@ -10,98 +10,52 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <p>
-            <form id="tarefaForm">
-                <label for="nomeTarefa"
-                    >Nome da tarefa:</label
-                >
-                <input
-                    type="text"
-                    id="nomeTarefa"
-                    required
-                />
-                <br />
-
-                <label for="origemProjeto">
-                    Origem do projeto:
-                </label>
-                <select
-                    id="origemProjeto"
-                    required>
-                    <option value="interno">Interno</option>
-                    <option value="tst">TST</option>
-                    <option value="agu">AGU</option>
-                    <option value="externo">Outros</option>
-                </select>
-
-
-                <!-- <label for="dataTarefa"
-                    >Data de criação:</label
-                >
-                <input
-                    type="date"
-                    id="dataTarefa"
-                    required
-                /> -->
-                <br />
-
-                <label for="statusTarefa"
-                    >Status:</label
-                >
-                <select
-                    id="statusTarefa"
-                    required
-                >
-                    <option value="Em andamento">
-                        Em andamento
-                    </option>
-                    <option value="Desenvolvimento">
-                        Desenvolvimento
-                    </option>
-                    <option value="Homologado">
-                        Homologado
-                    </option>
-                    <option value="Producao">
-                        Produção
-                    </option>
-                </select>
-                <br />
-
-                <label for="mensagemTarefa"
-                    >Descrição:</label>
-                    <textarea
-                    maxlength="250"
-                    id="mensagem"
-                ></textarea>
-                <br />
-                <!-- <label for="dataUpdate"
-                    >Data de atualização:</label
-                >
-                <input
-                    type="date"
-                    id="dataUpdate"
-                />
-                <br /> -->
-                <label for="autorTarefa"
-                    >Autor:</label
-                >
-                <input
-                    type="text"
-                    id="autorTarefa"
-                    required
-                />
-                <br />
-
-                <div
-                    class="form-container-salvar"
-                >
-                    <button
-                        type="submit"
-                        id="submitButton"
-                    >
-                        Salvar
-                    </button>
+        <form id="tarefaForm">
+            <fieldset>
+                <legend>Detalhes da Tarefa</legend>
+                <div class='nomeTarefa'>
+                    <label for="nomeTarefa">Nome da tarefa:</label>
+                    <input type="text" id="nomeTarefa" placeholder='titulo da task' required />
                 </div>
-            </form>
+
+                <div class='origem'>
+                    <label for="origemProjeto">Origem do projeto:</label>
+                    <select id="origemProjeto" required>
+                        <option value="interno">Interno</option>
+                        <option value="tst">TST</option>
+                        <option value="agu">AGU</option>
+                        <option value="externo">Outros</option>
+                    </select>
+                </div>
+
+                <div class='status'>
+                    <label for="statusTarefa">Status:</label>
+                    <select id="statusTarefa" required>
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Desenvolvimento">Desenvolvimento</option>
+                        <option value="Homologado">Homologado</option>
+                        <option value="Producao">Produção</option>
+                    </select>
+                </div>
+
+                <div class='mensagem'>
+                    <label for="mensagem">Descrição:</label>
+                    <textarea maxlength="250" id="mensagem" placeholder='descreva a task'></textarea>
+                </div>
+
+                <div class='autor'>
+                    <label for="autorTarefa">Autor:</label>
+                    <input type="text" id="autorTarefa" placeholder='quem solicitou?' maxlength='250' required />
+                </div>
+            </fieldset>
+
+            <div class="form-container-salvar">
+                <button type="submit" id="submitButton" class='btn-form-container-salvar'>Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
         </p>
         
     </div>
