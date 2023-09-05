@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('components/content/content.html')
+    fetch('components/Tarefas/content/content.html')
         .then((response) => response.text())
         .then((content) => {
             const contentElement = document.getElementById('content');

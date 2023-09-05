@@ -1,6 +1,6 @@
-import { listarTarefas } from '../../assets/js/crud.js';
+import { listarTarefas } from '../../../assets/js/crud.js';
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('components/container-main/container-main.html')
+    fetch('components/Tarefas/container-main/container-main.html')
         .then((response) => response.text())
         .then((gridMain) => {
             const gridContainerMain = document.getElementById(
