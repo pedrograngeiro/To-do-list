@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <title>Painel Administrativo</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Painel Administrativo</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="components/header/header.css" />
+        <link
+            rel="stylesheet"
+            href="components/container-esquerdo/container-esquerdo.css"
+        />
+
+        <link rel="stylesheet" href="components/footer/footer.css" />
+        <link
+            rel="stylesheet"
+            href="components/Painel/sistema-interno/cards-sistema-interno/cards-sistema-interno.css"
+        />
     </head>
     <body>
-        <div> </div>
+        <div id="container-esquerdo"></div>
+
+        <div id="container-principal">
+            <div id="container-principal__header">
+                <header id="header"></header>
+                <div id="cardSI"></div>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+        <script type="module" src="assets/js/dependencias.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="components/header/header.js"></script>
+        <script src="components/container-esquerdo/container-esquerdo.js"></script>
+        <script src="components/footer/footer.js"></script>
+        <script src="components/Painel/sistema-interno/cards-sistema-interno/cards-sistema-interno.js"></script>
+
+        <script type="module" src="assets/js/crud.js"></script>
     </body>
 </html>
