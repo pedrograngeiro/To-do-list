@@ -12,6 +12,18 @@ export const listarTarefas = (database) => {
     });
 };
 
+export const listarSistemaInterno = (database) => {
+    const listaRef = database.ref('sistema_interno');
+
+    return new Promise((resolve, reject) => {
+        listaRef.on('value', (snapshot) => {
+            const pasta = snapshot.val();
+            const estados = Object.values(pasta);
+            resolve(estados);
+        });
+    });
+};
+
 // export const listarTarefas = (database) => {
 //     const listaRef = database.ref('lista');
 
@@ -38,7 +50,18 @@ export const listarTarefas = (database) => {
 
     const database = firebase.database();
 
-    const listaRef = database.ref('lista');
+    listarSistemaInterno(database)
+        .then((estadosDoFirebase) => {
+            console.log(
+                'Lista de estados do sistema interno:',
+                estadosDoFirebase
+            );
+        })
+        .catch((error) => {
+            console.error('Erro ao listar estados do sistema interno:', error);
+        });
+
+    // const listaRef = database.ref('lista');
 
     // listarTarefas(database);
 })();
