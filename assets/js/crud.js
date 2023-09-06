@@ -50,16 +50,16 @@ export const listarSistemaInterno = (database) => {
 
     const database = firebase.database();
 
-    listarSistemaInterno(database)
-        .then((estadosDoFirebase) => {
-            console.log(
-                'Lista de estados do sistema interno:',
-                estadosDoFirebase
-            );
-        })
-        .catch((error) => {
-            console.error('Erro ao listar estados do sistema interno:', error);
-        });
+    // listarSistemaInterno(database)
+    //     .then((estadosDoFirebase) => {
+    //         console.log(
+    //             'Lista de estados do sistema interno:',
+    //             estadosDoFirebase
+    //         );
+    //     })
+    //     .catch((error) => {
+    //         console.error('Erro ao listar estados do sistema interno:', error);
+    //     });
 
     // const listaRef = database.ref('lista');
 
