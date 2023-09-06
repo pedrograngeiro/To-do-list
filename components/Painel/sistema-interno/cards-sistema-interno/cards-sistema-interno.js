@@ -13,10 +13,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
             listarSistemaInterno(database)
                 .then((estadosDoFirebase) => {
-                    console.log(
-                        'Lista de estados do sistema interno:',
-                        estadosDoFirebase
-                    );
+                    const divSI = document.getElementById('container-cards-si');
+
+                    divSI.classList.add('card-sistema-interno');
+
+                    estadosDoFirebase.forEach(function (item) {
+                        const divCard = document.createElement('div');
+                        divCard.innerHTML = `
+                        <div id="card-sistema-interno">
+                            <div class="circle">
+                                <span id="estado" class="estados">${item.estado}</span>
+                            </div>
+                            <div class="campo-arquivo">
+                                <span id="ano-mes" class='campo-input'>${item.ano_mes}</span>
+                                <span id="tipo-arquivo" class='campo-input'>${item.tipo}</span>
+                            </div>
+                            <div id="status" class='status_${item.status}'></div>
+                        </div>
+                        `;
+                        divSI.appendChild(divCard);
+                    });
                 })
                 .catch((error) => {
                     console.error(

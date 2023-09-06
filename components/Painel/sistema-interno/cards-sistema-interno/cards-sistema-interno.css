@@ -1,24 +1,29 @@
-:root{
+:root {
     --bg-fill: #7d7aff;
-    --bg-input: #d9d9d9;
-    --stroke-border:#07182e;
+    --bg-input: #dfdfff;
+    --stroke-border: #07182e;
+    --bg-status-true: #00ff00;
+    --bg-status-false: #ff0000;
 }
 
-#container-cards-si{
-    display: flex;
+#container-cards-si {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
     padding: 10px;
 }
 
-#card-sistema-interno{
+#card-sistema-interno {
     display: flex;
     justify-content: space-between;
     height: 54px;
     width: 160px;
+    margin-left: 5px;
     border-radius: 5px;
     background: var(--bg-fill);
     z-index: 1;
 }
-#card-sistema-interno .circle{
+#card-sistema-interno .circle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,16 +36,17 @@
     border-color: var(--stroke-border);
     z-index: 2;
 }
-#card-sistema-interno .circle #estado{
+#card-sistema-interno .circle .estados {
     color: #ffffff;
 }
-#card-sistema-interno .campo-arquivo{
+
+#card-sistema-interno .campo-arquivo {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin: 3px;
 }
-#card-sistema-interno .campo-arquivo .campo-input{
+#card-sistema-interno .campo-arquivo .campo-input {
     display: flex;
     width: 80px;
     background: var(--bg-input);
@@ -51,12 +57,22 @@
     padding-right: 5px;
     font-size: 14px;
 }
-#card-sistema-interno .status{
+#card-sistema-interno .status_false {
     display: flex;
     width: 10px;
     height: 10px;
     margin: auto;
     border-radius: 50%;
-    background: var(--bg-input);
+    background: var(--bg-status-false);
+    margin-right: 5px;
+}
+
+#card-sistema-interno .status_true {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    border-radius: 50%;
+    background: var(--bg-status-true);
     margin-right: 5px;
 }
