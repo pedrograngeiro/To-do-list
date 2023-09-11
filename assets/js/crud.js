@@ -50,7 +50,16 @@ export const adicionarNovaTarefa = async (data) => {
     const novaTarefa = {
         nomeTarefa: data.nomeTarefa || 'Nova Tarefa',
         origemProjeto: data.origemProjeto || 'Outros',
-        statusTarefa: data.statusTarefa || 'Em andamento',
+        statusTarefa:
+            data.statusTarefa === 'Em andamento'
+                ? 'E'
+                : data.statusTarefa === 'Desenvolvimento'
+                ? 'D'
+                : data.statusTarefa === 'Homologacao'
+                ? 'H'
+                : data.statusTarefa === 'Producao'
+                ? 'P'
+                : data.statusTarefa || 'Em andamento',
         mensagem: data.mensagem || '',
         autorTarefa: data.autorTarefa || 'Nome do Usuário',
         created: data.created
