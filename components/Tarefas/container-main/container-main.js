@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     divCard.innerHTML = `
                         <div class="grid-item">
                             <div class='card'>
-                                <h4 id='user_id' class='nome' data-user=''>${item.user}</h4>
+                                <h4 id='user_id' class='nome' data-user=''>${item.autorTarefa}</h4>
                                 <div class='titulo_e_progress'>
-                                <span id='task' class='titulo_task'>${item.nome_task}</span>
+                                <span id='task' class='titulo_task'>${item.nomeTarefa}</span>
                                 <div class='opcional'>
-                                    <span id='info-task'>${item.status}</span>
+                                    <span id='info-task'>${item.statusTarefa}</span>
                                 </div>
                             </div>
                             <div class='inicio-e-origem'>

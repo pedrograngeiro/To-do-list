@@ -45,6 +45,29 @@ export const listarSistemaInterno = (database) => {
 //     });
 // };
 
+export const adicionarNovaTarefa = async (data) => {
+    // Altere o parâmetro de 'tarefa' para 'data'
+    const novaTarefa = {
+        nomeTarefa: data.nomeTarefa || 'Nova Tarefa',
+        origemProjeto: data.origemProjeto || 'Outros',
+        statusTarefa: data.statusTarefa || 'Em andamento',
+        mensagem: data.mensagem || '',
+        autorTarefa: data.autorTarefa || 'Nome do Usuário',
+    };
+
+    const database = firebase.database(); // Obtenha a referência do banco de dados aqui (se não estiver no escopo anterior)
+    const listaRef = database.ref('lista');
+
+    const novaTarefaRef = listaRef.push();
+
+    try {
+        await novaTarefaRef.set(novaTarefa);
+        console.log('Nova tarefa adicionada com sucesso!');
+    } catch (error) {
+        console.log('Erro ao adicionar nova tarefa: ', error);
+    }
+};
+
 (function () {
     firebase.initializeApp(firebaseConfig());
 

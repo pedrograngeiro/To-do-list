@@ -1,3 +1,5 @@
+import { adicionarNovaTarefa } from '../../../assets/js/crud.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     fetch('components/Tarefas/content/content.html')
         .then((response) => response.text())
@@ -51,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // enviar os dados para o servidor
                     console.log(JSON.stringify(formData));
+                    adicionarNovaTarefa(formData);
                 });
         })
         .catch((error) => {
