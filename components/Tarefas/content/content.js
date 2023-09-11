@@ -23,6 +23,35 @@ document.addEventListener('DOMContentLoaded', function () {
                     modal.style.display = 'none';
                 }
             });
+
+            document
+                .getElementById('tarefaForm')
+                .addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    // pegar o dados dos campos forms
+                    var nomeTarefa =
+                        document.getElementById('nomeTarefa').value;
+                    var origemProjeto =
+                        document.getElementById('origemProjeto').value;
+                    var statusTarefa =
+                        document.getElementById('statusTarefa').value;
+                    var mensagem = document.getElementById('mensagem').value;
+                    var autorTarefa =
+                        document.getElementById('autorTarefa').value;
+
+                    // criar um objeto JSON com os dados
+                    const formData = {
+                        nomeTarefa,
+                        origemProjeto,
+                        statusTarefa,
+                        mensagem,
+                        autorTarefa,
+                    };
+
+                    // enviar os dados para o servidor
+                    console.log(JSON.stringify(formData));
+                });
         })
         .catch((error) => {
             console.error('Error loading content:', error);
