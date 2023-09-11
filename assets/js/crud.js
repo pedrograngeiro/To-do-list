@@ -53,6 +53,12 @@ export const adicionarNovaTarefa = async (data) => {
         statusTarefa: data.statusTarefa || 'Em andamento',
         mensagem: data.mensagem || '',
         autorTarefa: data.autorTarefa || 'Nome do Usuário',
+        created: data.created
+            ? new Date(data.created).toLocaleDateString()
+            : new Date().toLocaleDateString(),
+        update: data.update
+            ? new Date(data.update).toLocaleDateString()
+            : new Date().toLocaleDateString(),
     };
 
     const database = firebase.database(); // Obtenha a referência do banco de dados aqui (se não estiver no escopo anterior)
