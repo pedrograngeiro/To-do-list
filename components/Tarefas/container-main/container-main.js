@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </p>
                                 <p>
                                     Origem:
-                                    <span id='origem' class='origem'>${item.origem}</span>
+                                    <span id='origem' class='origem'>${item.origemProjeto}</span>
                                 </p>
                             </div>
                             <div id='' class=''>
