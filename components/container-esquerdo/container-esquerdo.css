@@ -4,10 +4,18 @@
     height: 100vh;
     width: 80px;
     background-color: #06577b;
+    margin: 0;
+}
+
+.lista-icones {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0 25px;
 }
 
 .fa-house {
     font-size: 24px;
+    padding: 0 0 10px 0;
 }
 
 .fa-list {
