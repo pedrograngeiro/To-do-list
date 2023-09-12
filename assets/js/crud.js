@@ -55,7 +55,7 @@ export const adicionarNovaTarefa = async (data) => {
                 ? 'E'
                 : data.statusTarefa === 'Desenvolvimento'
                 ? 'D'
-                : data.statusTarefa === 'Homologacao'
+                : data.statusTarefa === 'Homologado'
                 ? 'H'
                 : data.statusTarefa === 'Producao'
                 ? 'P'
