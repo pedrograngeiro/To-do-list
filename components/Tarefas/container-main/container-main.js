@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     'container-middle-output'
                 );
                 divTarefas.classList.add('grid-container');
-
                 tarefasDoFirebase.forEach(function (item) {
                     const divCard = document.createElement('div');
                     divCard.innerHTML = `
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div class='titulo_e_progress'>
                                 <span id='task' class='titulo_task'>${item.nomeTarefa}</span>
                                 <div class='opcional'>
-                                    <span id='info-task'>${item.statusTarefa}</span>
+                                    <span id='info-task' data-foo='${item.statusTarefa}'>${item.statusTarefa}</span>
                                 </div>
                             </div>
                             <div class='inicio-e-origem'>
@@ -38,13 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <span id='origem' class='origem'>${item.origemProjeto}</span>
                                 </p>
                             </div>
-                            <div id='' class=''>
+                            <div id='card-oculto' class='active'>
                                 <div class='container'>
                                     <ul class='progressbar'>
-                                        <li data-step='E'></li>
-                                        <li data-step='D'></li>
-                                        <li data-step='H'></li>
-                                        <li data-step='P'></li>
+                                        <li data-step='E' ${item.statusTarefa === 'E' ? ' class="atual"' : ''}></li>
+                                        <li data-step='D' ${item.statusTarefa === 'D' ? ' class="atual"' : ''}></li>
+                                        <li data-step='H' ${item.statusTarefa === 'H' ? ' class="atual"' : ''}></li>
+                                        <li data-step='P' ${item.statusTarefa === 'P' ? ' class="atual"' : ''}></li>
                                     </ul>
                                 </div>
                                 <p>  
@@ -57,26 +56,30 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                         </div>
-                        `;
+                        `
+                    ;
                     divTarefas.append(divCard);
-                });
+                    // Adicione o código JavaScript aqui, após a criação dos elementos do cartão
+                    const progressSteps = divCard.querySelectorAll('.progressbar li');
+                    const selectedStep = item.statusTarefa;
+
+                    let activate = false;
+
+                    progressSteps.forEach((step) => {
+                        const stepValue = step.getAttribute('data-step');
+
+                        if (stepValue === selectedStep) {
+                            activate = true;
+                        }
+
+                        if (activate) {
+                            step.classList.add('active');
+                        } else {
+                            step.classList.remove('active');
+                        }
+                    });
             });
-
-            //Ideia Futura, depois implemetar
-
-            // const cardOculto = document.getElementById('card-oculto');
-            // const cardGeral = document.querySelector('.opcional');
-
-            // let isCardActive = false;
-
-            // cardGeral.addEventListener('click', function () {
-            //     if (isCardActive) {
-            //         cardOculto.classList.remove('active');
-            //         isCardActive = false;
-            //     } else {
-            //         cardOculto.classList.add('active');
-            //         isCardActive = true;
-            //     }
-            // });
         });
+    });
 });
+

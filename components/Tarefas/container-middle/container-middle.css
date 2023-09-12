@@ -139,19 +139,33 @@
     height: 4px;
     background: var(--light-grey);
     position: absolute;
-    top: -32.2px;
+    top: -34.2px;
     left: -50%;
 }
 
 .container ul li:first-child:after {
-    width: 0;
+    width: 0px;
 }
 
-.container ul li.active:before,
-.container ul li.active:after,
-.container ul li.active {
+.container ul li.active:before{
     background: var(--green);
     color: #fff;
+}
+.container ul li.active:after{
+    background: var(--green);
+}
+.container ul li.active{
+    color: var(--green);
+}
+.container ul li.atual:before{
+    background: var(--light-grey);
+    color: #fff;
+}
+.container ul li.atual:after{
+    background: var(--light-grey);
+}
+.container ul li.atual{
+    color: var(--light-grey);
 }
 
 #card-oculto {
@@ -164,6 +178,7 @@
 }
 
 .texto_task {
+    align-content: start;
     resize: vertical; /* Permite redimensionamento vertical */
     width: 80%;
     padding: 10px;
