@@ -65,9 +65,9 @@ export const adicionarNovaTarefa = async (data) => {
         created: data.created
             ? new Date(data.created).toLocaleDateString()
             : new Date().toLocaleDateString(),
-        update: data.update
-            ? new Date(data.update).toLocaleDateString()
-            : new Date().toLocaleDateString(),
+        // update: data.update
+        //     ? new Date(data.update).toLocaleDateString()
+        //     : new Date().toLocaleDateString(),
     };
 
     const database = firebase.database(); // Obtenha a referência do banco de dados aqui (se não estiver no escopo anterior)

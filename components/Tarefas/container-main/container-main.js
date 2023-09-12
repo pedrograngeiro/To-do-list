@@ -21,21 +21,31 @@ document.addEventListener('DOMContentLoaded', function () {
                     divCard.innerHTML = `
                         <div class="grid-item">
                             <div class='card'>
-                                <h4 id='user_id' class='nome' data-user=''>${item.autorTarefa}</h4>
+                                <h4 id='user_id' class='nome' data-user=''>${
+                                    item.autorTarefa
+                                }</h4>
                                 <div class='titulo_e_progress'>
-                                <span id='task' class='titulo_task'>${item.nomeTarefa}</span>
+                                <span id='task' class='titulo_task'>${
+                                    item.nomeTarefa
+                                }</span>
                                 <div class='opcional'>
-                                    <span id='info-task'>${item.statusTarefa}</span>
+                                    <span id='info-task'>${
+                                        item.statusTarefa
+                                    }</span>
                                 </div>
                             </div>
                             <div class='inicio-e-origem'>
                                 <p>
                                     Data Inicio:
-                                    <span id='inicio-data' class='data_span'>${item.created}</span>
+                                    <span id='inicio-data' class='data_span'>${
+                                        item.created
+                                    }</span>
                                 </p>
                                 <p>
                                     Origem:
-                                    <span id='origem' class='origem'>${item.origemProjeto}</span>
+                                    <span id='origem' class='origem'>${
+                                        item.origemProjeto
+                                    }</span>
                                 </p>
                             </div>
                             <div id='' class=''>
@@ -50,10 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <p>  
                                 <span id='mensagem-task'>${item.mensagem}</span>
                                 </p>
-                                <p>
+
+                                ${
+                                    item.update !== undefined
+                                        ? `<p>
                                     Data Atualização:
                                     <span id='atualizacao-data' class='data_span'>${item.update}</span>
-                                </p>
+                                </p>`
+                                        : ''
+                                }
+
                             </div>
                         </div>
                         </div>
