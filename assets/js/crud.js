@@ -24,6 +24,21 @@ export const listarSistemaInterno = (database) => {
     });
 };
 
+export const editarTarefa = async (data, numCard) => {
+    return new Promise((resolve, reject) => {
+        try {
+            const resultado = data[numCard];
+            if (resultado) {
+                resolve(resultado);
+            } else {
+                reject('Item não encontrado');
+            }
+        } catch (error) {
+            reject(error);
+        }
+    });
+};
+
 // export const listarTarefas = (database) => {
 //     const listaRef = database.ref('lista');
 
