@@ -31,70 +31,39 @@ document.addEventListener('DOMContentLoaded', function () {
                     divCard.innerHTML = `
                         <div class="grid-item">
                             <div class='card'>
-                                <h4 id='user_id' class='nome' data-user=''>${
-                                    item.autorTarefa
-                                }</h4>
+                                <h4 id='user_id' class='nome' data-user=''>${item.autorTarefa}</h4>
                                 <div class='titulo_e_progress'>
-                                <span id='task' class='titulo_task'>${
-                                    item.nomeTarefa
-                                }</span>
+                                <span id='task' class='titulo_task'>${item.nomeTarefa}</span>
                                 <div class='opcional'>
-                                    <span id='info-task' data-foo='${
-                                        item.statusTarefa
-                                    }'>${item.statusTarefa}</span>
+                                    <span id='info-task' data-foo='${item.statusTarefa}'>${item.statusTarefa}</span>
                                 </div>
                             </div>
                             <div class='inicio-e-origem'>
                                 <p>
                                     Data Inicio:
-                                    <span id='inicio-data' class='data_span'>${
-                                        item.created
-                                    }</span>
+                                    <span id='inicio-data' class='data_span'>${item.created}</span>
                                 </p>
                                 <p>
                                     Origem:
-                                    <span id='origem' class='origem'>${
-                                        item.origemProjeto
-                                    }</span>
+                                    <span id='origem' class='origem'>${item.origemProjeto}</span>
                                 </p>
                             </div>
                             <div id='card-oculto' class='active'>
                                 <div class='container'>
                                     <ul class='progressbar'>
-                                        <li data-step='E' ${
-                                            item.statusTarefa === 'E'
-                                                ? ' class="atual"'
-                                                : ''
-                                        }></li>
-                                        <li data-step='D' ${
-                                            item.statusTarefa === 'D'
-                                                ? ' class="atual"'
-                                                : ''
-                                        }></li>
-                                        <li data-step='H' ${
-                                            item.statusTarefa === 'H'
-                                                ? ' class="atual"'
-                                                : ''
-                                        }></li>
-                                        <li data-step='P' ${
-                                            item.statusTarefa === 'P'
-                                                ? ' class="atual"'
-                                                : ''
-                                        }></li>
+                                        <li data-step='E' ${ item.statusTarefa === 'E' ? ' class="atual"' : '' }></li>
+                                        <li data-step='D' ${ item.statusTarefa === 'D' ? ' class="atual"' : '' }></li>
+                                        <li data-step='H' ${ item.statusTarefa === 'H' ? ' class="atual"' : '' }></li>
+                                        <li data-step='P' ${ item.statusTarefa === 'P' ? ' class="atual"' : '' }></li>
                                     </ul>
                                 </div>
                                 <p>  
                                 <span id='mensagem-task'>${item.mensagem}</span>
                                 </p>
-                                <p>
-                                    ${
-                                        item.update !== undefined
-                                            ? `<p>
+                                <p>${item.update !== undefined? `<p>
                                         Data Atualização:
                                         <span id='atualizacao-data' class='data_span'>${item.update}</span>
-                                    </p>`
-                                            : ''
-                                    }
+                                    </p>` : '' }
                                 </p>
                             </div>
                         </div>

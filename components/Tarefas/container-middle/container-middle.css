@@ -1,26 +1,21 @@
 :root {
-    --dark-grey: #181139;
-    --light-grey: #142c4c;
-    --green: #06577b;
-    --red: #ff005a;
-    --yellow: #fae500;
-    --purple: #137aa7; /* Cor de fundo dos grid-items */
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 10px 0 0 10px;
+    --deep-blue: #181139;
+    --night-blue: #142c4c;
+    --midnight-blue: #06577b;
+    --coral-red: #ff005a;
+    --lemon-yellow: #fae500;
+    --cyan-blue: #137aa7; /* Cor de fundo dos grid-items */
 }
 
 .grid-item {
-    background-color: var(--purple); /* Alterado para a variável --purple */
-    border: 1px solid var(--light-grey); /* Alterado para a variável --light-grey */
+    position: relative;
+    background-color: var(--cyan-blue);
+    border: 1px solid var(--night-blue);
     padding: 10px;
     text-align: center;
     border-radius: 10px;
     width: 320px;
+    height: 380px;
     color: #fff;
 }
 
@@ -62,7 +57,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light-grey);
+    background-color: var(--night-blue);
     border: none;
     border-radius: 50%;
     width: 35px;
@@ -86,7 +81,7 @@
     flex-direction: row;
     font-size: 0.9rem;
     padding: 0;
-    margin: 5px 0 5 0;
+    margin: 5px 0 5px 0;
 }
 
 .progress {
@@ -112,7 +107,7 @@
 
 .container ul li {
     position: relative;
-    color: var(--dark-grey);
+    color: var(--deep-blue);
     width: 25%;
     text-align: center;
 }
@@ -125,7 +120,7 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: var(--light-grey);
+    background: var(--night-blue);
     color: #fcfcfc;
     position: absolute;
     top: -50px;
@@ -137,7 +132,7 @@
     content: '';
     width: 100%;
     height: 4px;
-    background: var(--light-grey);
+    background: var(--night-blue);
     position: absolute;
     top: -34.2px;
     left: -50%;
@@ -148,24 +143,24 @@
 }
 
 .container ul li.active:before{
-    background: var(--green);
+    background: var(--midnight-blue);
     color: #fff;
 }
 .container ul li.active:after{
-    background: var(--green);
+    background: var(--midnight-blue);
 }
 .container ul li.active{
-    color: var(--green);
+    color: var(--midnight-blue);
 }
 .container ul li.atual:before{
-    background: var(--light-grey);
+    background: var(--night-blue);
     color: #fff;
 }
 .container ul li.atual:after{
-    background: var(--light-grey);
+    background: var(--night-blue);
 }
 .container ul li.atual{
-    color: var(--light-grey);
+    color: var(--night-blue);
 }
 
 #card-oculto {
@@ -183,7 +178,7 @@
     width: 80%;
     padding: 10px;
     margin-left: 10px;
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--night-blue);
     border-radius: 5px;
     font-size: 14px;
 }
@@ -192,7 +187,7 @@
     display: block;
     margin-top: 10px;
     font-size: 12px;
-    color: var(--dark-grey);
+    color: var(--deep-blue);
 }
 
 .card p {
