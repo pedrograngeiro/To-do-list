@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    background-color: #d6dcdf; /* Alterado para #d6dcdf */
 }
 
 /* Estilo para o modal */
@@ -22,7 +22,7 @@
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #6596ae; /* Alterado para #6596ae */
     width: 600px;
 }
 
@@ -35,67 +35,67 @@
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #06577b; /* Alterado para #06577b */
     text-decoration: none;
     cursor: pointer;
 }
-fieldset{
+fieldset {
     margin-bottom: 10px;
 }
-#tarefaForm .nomeTarefa{
+#tarefaForm .nomeTarefa {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .nomeTarefa input{
+#tarefaForm .nomeTarefa input {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
-#tarefaForm .origem{
+#tarefaForm .origem {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .origem select{
+#tarefaForm .origem select {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
-#tarefaForm .status{
+#tarefaForm .status {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .status select{
+#tarefaForm .status select {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
-#tarefaForm .mensagem{
+#tarefaForm .mensagem {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .mensagem textarea{
+#tarefaForm .mensagem textarea {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
-#tarefaForm .autor{
+#tarefaForm .autor {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .autor input{
+#tarefaForm .autor input {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
 
-.btn-form-container-salvar{
+.btn-form-container-salvar {
     width: 100px;
     height: 30px;
-    background: #6682ff;
+    background: #1282d0; /* Alterado para #1282d0 */
     border-radius: 4px;
 }

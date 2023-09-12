@@ -1,9 +1,10 @@
 :root {
-    --dark-grey: #9fabae;
-    --light-grey: #dfe3e4;
-    --green: #2ecc21;
+    --dark-grey: #181139;
+    --light-grey: #142c4c;
+    --green: #06577b;
     --red: #ff005a;
     --yellow: #fae500;
+    --purple: #137aa7; /* Cor de fundo dos grid-items */
 }
 
 .grid-container {
@@ -14,8 +15,8 @@
 }
 
 .grid-item {
-    background-color: #663399;
-    border: 1px solid #ccc;
+    background-color: var(--purple); /* Alterado para a variável --purple */
+    border: 1px solid var(--light-grey); /* Alterado para a variável --light-grey */
     padding: 10px;
     text-align: center;
     border-radius: 10px;
@@ -70,7 +71,7 @@
 }
 
 .opcional span {
-    color: #000;
+    color: #fcfcfc;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -125,7 +126,7 @@
     height: 35px;
     border-radius: 50%;
     background: var(--light-grey);
-    color: var(--dark-grey);
+    color: #fcfcfc;
     position: absolute;
     top: -50px;
     left: calc(50% - 20px);

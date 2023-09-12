@@ -5,3 +5,15 @@ Azul claro: #99CCFF
 Laranja claro: #ffddaa
 Verde: #33CC33
 Cinza: #CCCCCC
+
+
+
+#06577b
+#d6dcdf
+#6596ae
+#5dcaf1
+#137aa7
+#1282d0
+#585c80
+#181139
+#142c4c
