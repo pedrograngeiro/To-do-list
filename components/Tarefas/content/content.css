@@ -1,9 +1,18 @@
+:root {
+    --deep-blue: #181139;
+    --night-blue: #142c4c;
+    --midnight-blue: #06577b;
+    --coral-red: #ff005a;
+    --lemon-yellow: #fae500;
+    --cyan-blue: #137aa7;
+    --greey: #dfe2e8;
+}
 .content-button {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #d6dcdf; /* Alterado para #d6dcdf */
+    background: var(--greey); /* Alterado para #d6dcdf */
 }
 
 /* Estilo para o modal */
@@ -22,8 +31,8 @@
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #6596ae; /* Alterado para #6596ae */
-    width: 600px;
+    border: 1px solid var(--midnight-blue); /* Alterado para #6596ae */
+    width: 620px;
 }
 
 .close {
@@ -35,12 +44,14 @@
 
 .close:hover,
 .close:focus {
-    color: #06577b; /* Alterado para #06577b */
+    color: var(--midnight-blue); /* Alterado para #06577b */
     text-decoration: none;
     cursor: pointer;
 }
 fieldset {
     margin-bottom: 10px;
+    border-radius: 5px;
+    background: var(--greey);
 }
 #tarefaForm .nomeTarefa {
     display: flex;
@@ -51,6 +62,7 @@ fieldset {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
+    color: var(--deep-blue);
 }
 #tarefaForm .origem {
     display: flex;
@@ -96,6 +108,6 @@ fieldset {
 .btn-form-container-salvar {
     width: 100px;
     height: 30px;
-    background: #1282d0; /* Alterado para #1282d0 */
+    background: var(--midnight-blue); /* Alterado para #1282d0 */
     border-radius: 4px;
 }

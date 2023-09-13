@@ -4,7 +4,8 @@
     --midnight-blue: #06577b;
     --coral-red: #ff005a;
     --lemon-yellow: #fae500;
-    --cyan-blue: #137aa7; /* Cor de fundo dos grid-items */
+    --cyan-blue: #137aa7;
+        --greey: #dfe2e8;
 }
 
 .grid-item {
@@ -16,7 +17,7 @@
     border-radius: 10px;
     width: 320px;
     height: 380px;
-    color: #fff;
+    color: var(--greey);
 }
 
 .card {
@@ -66,7 +67,7 @@
 }
 
 .opcional span {
-    color: #fcfcfc;
+    color: var(--greey);
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -121,7 +122,7 @@
     height: 35px;
     border-radius: 50%;
     background: var(--night-blue);
-    color: #fcfcfc;
+    color: var(--greey);
     position: absolute;
     top: -50px;
     left: calc(50% - 20px);
@@ -144,7 +145,7 @@
 
 .container ul li.active:before{
     background: var(--midnight-blue);
-    color: #fff;
+    color: var(--greey);
 }
 .container ul li.active:after{
     background: var(--midnight-blue);
@@ -154,7 +155,7 @@
 }
 .container ul li.atual:before{
     background: var(--night-blue);
-    color: #fff;
+    color:var(--greey);
 }
 .container ul li.atual:after{
     background: var(--night-blue);
@@ -174,7 +175,7 @@
 
 .texto_task {
     align-content: start;
-    resize: vertical; /* Permite redimensionamento vertical */
+    resize: vertical;
     width: 80%;
     padding: 10px;
     margin-left: 10px;
