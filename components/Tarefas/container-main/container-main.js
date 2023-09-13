@@ -92,7 +92,26 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                     `;
+                     // Adicione o código JavaScript aqui, após a criação dos elementos do cartão
+                    const progressSteps =
+                        divCard.querySelectorAll('.progressbar li');
+                    const selectedStep = item.statusTarefa;
 
+                    let activate = false;
+
+                    progressSteps.forEach((step) => {
+                        const stepValue = step.getAttribute('data-step');
+
+                        if (stepValue === selectedStep) {
+                            activate = true;
+                        }
+
+                        if (activate) {
+                            step.classList.add('active');
+                        } else {
+                            step.classList.remove('active');
+                        }
+                    });
                     // click no botão de editar
                     const meuBotao = divCard.querySelector('.fa-regular');
                     meuBotao.addEventListener('click', function () {
