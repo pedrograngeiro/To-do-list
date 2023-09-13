@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'container-middle-output'
                 );
 
-                // console.log(tarefasDoFirebase);
+                console.log(tarefasDoFirebase);
 
                 editarTarefa(tarefasDoFirebase, 5)
                     .then((resultado) => {
@@ -26,50 +26,80 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
 
                 divTarefas.classList.add('grid-container');
-                tarefasDoFirebase.forEach(function (item) {
+                tarefasDoFirebase.forEach(function (item, index) {
                     const divCard = document.createElement('div');
                     divCard.innerHTML = `
                         <div class="grid-item">
+                        <i id="meuBotao" class="fa-regular fa-pen-to-square"></i>
                             <div class='card'>
-                                <h4 id='user_id' class='nome' data-user=''>${item.autorTarefa}</h4>
+                                <h4 id='user_id' class='nome' data-user=''>${
+                                    item.autorTarefa
+                                }</h4>
                                 <div class='titulo_e_progress'>
-                                <span id='task' class='titulo_task'>${item.nomeTarefa}</span>
+                                <span id='task' class='titulo_task'>${
+                                    item.nomeTarefa
+                                }</span>
                                 <div class='opcional'>
-                                    <span id='info-task' data-foo='${item.statusTarefa}'>${item.statusTarefa}</span>
+                                    <span id='info-task' data-foo='${
+                                        item.statusTarefa
+                                    }'>${item.statusTarefa}</span>
                                 </div>
                             </div>
                             <div class='inicio-e-origem'>
                                 <p>
                                     Data Inicio:
-                                    <span id='inicio-data' class='data_span'>${item.created}</span>
+                                    <span id='inicio-data' class='data_span'>${
+                                        item.created
+                                    }</span>
                                 </p>
                                 <p>
                                     Origem:
-                                    <span id='origem' class='origem'>${item.origemProjeto}</span>
+                                    <span id='origem' class='origem'>${
+                                        item.origemProjeto
+                                    }</span>
                                 </p>
                             </div>
                             <div id='card-oculto' class='active'>
                                 <div class='container'>
                                     <ul class='progressbar'>
-                                        <li data-step='E' ${ item.statusTarefa === 'E' ? ' class="atual"' : '' }></li>
-                                        <li data-step='D' ${ item.statusTarefa === 'D' ? ' class="atual"' : '' }></li>
-                                        <li data-step='H' ${ item.statusTarefa === 'H' ? ' class="atual"' : '' }></li>
-                                        <li data-step='P' ${ item.statusTarefa === 'P' ? ' class="atual"' : '' }></li>
+                                        <li data-step='E' ${
+                                            item.statusTarefa === 'E'
+                                                ? ' class="atual"'
+                                                : ''
+                                        }></li>
+                                        <li data-step='D' ${
+                                            item.statusTarefa === 'D'
+                                                ? ' class="atual"'
+                                                : ''
+                                        }></li>
+                                        <li data-step='H' ${
+                                            item.statusTarefa === 'H'
+                                                ? ' class="atual"'
+                                                : ''
+                                        }></li>
+                                        <li data-step='P' ${
+                                            item.statusTarefa === 'P'
+                                                ? ' class="atual"'
+                                                : ''
+                                        }></li>
                                     </ul>
                                 </div>
                                 <p>  
                                 <span id='mensagem-task'>${item.mensagem}</span>
                                 </p>
-                                <p>${item.update !== undefined? `<p>
+                                <p>${
+                                    item.update !== undefined
+                                        ? `<p>
                                         Data Atualização:
                                         <span id='atualizacao-data' class='data_span'>${item.update}</span>
-                                    </p>` : '' }
+                                    </p>`
+                                        : ''
+                                }
                                 </p>
                             </div>
                         </div>
                         </div>
                         `;
-                    divTarefas.append(divCard);
                     // Adicione o código JavaScript aqui, após a criação dos elementos do cartão
                     const progressSteps =
                         divCard.querySelectorAll('.progressbar li');
@@ -90,6 +120,18 @@ document.addEventListener('DOMContentLoaded', function () {
                             step.classList.remove('active');
                         }
                     });
+
+                    // click no botão de editar
+                    const meuBotao = divCard.querySelector('#meuBotao');
+                    meuBotao.addEventListener('click', function () {
+                        console.log(
+                            'Clicou no botão do card com índice:',
+                            index
+                        );
+                        console.log('Dados do card:', item);
+                    });
+
+                    divTarefas.append(divCard);
                 });
             });
         });
