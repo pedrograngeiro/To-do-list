@@ -4,13 +4,22 @@
     --stroke-border: #07182e;
     --bg-status-true: #00ff00;
     --bg-status-false: #ff0000;
+        --deep-blue: #181139;
+    --night-blue: #142c4c;
+    --midnight-blue: #06577b;
+    --coral-red: #ff005a;
+    --lemon-yellow: #fae500;
+    --cyan-blue: #137aa7;
+        --greey: #dfe2e8;
 }
 
 #container-cards-si {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-gap: 10px;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px;
 }
 
 #card-sistema-interno {
@@ -31,13 +40,13 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background: var(--bg-fill);
+    background: var(--night-blue);
     border: solid 2px;
     border-color: var(--stroke-border);
     z-index: 2;
 }
 #card-sistema-interno .circle .estados {
-    color: #ffffff;
+    color: var(--greey);
 }
 
 #card-sistema-interno .campo-arquivo {
