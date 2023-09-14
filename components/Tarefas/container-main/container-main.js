@@ -1,6 +1,8 @@
 import { listarTarefas, editarTarefa } from '../../../assets/js/crud.js';
 
 document.addEventListener('DOMContentLoaded', function () {
+    let modalAberto = null;
+
     fetch('components/Tarefas/container-main/container-main.html')
         .then((response) => response.text())
         .then((gridMain) => {
@@ -130,19 +132,34 @@ document.addEventListener('DOMContentLoaded', function () {
                         // Selecionando o campo de status dentro do modal usando o ID correto
                         const modalStatusTarefa = modal.querySelector(
                             '#statusTarefaSelect'
-                        ); // Adicione esta linha
+                        );
                         const modalMensagem = modal.querySelector('#mensagem');
                         const modalAutorTarefa =
                             modal.querySelector('#autorTarefa');
 
+                        // Selecione o elemento "span close" dentro do modal pelo seu ID
+                        const spanClose = modal.querySelector('.modal .close');
+
+                        // Adicione um evento de clique ao elemento "span close"
+                        spanClose.addEventListener('click', function () {
+                            // Fecha o modal ao clicar no botão "span close"
+                            modal.style.display = 'none';
+
+                            // Define a variável global como nula
+                            modalAberto = null;
+                        });
+
                         // Preencha os campos do modal com os dados do item clicado
                         modalNomeTarefa.value = itemClicado.nomeTarefa;
                         modalOrigemProjeto.value = itemClicado.origemProjeto;
-                        modalStatusTarefa.value = itemClicado.statusTarefa; // Defina o valor do campo de status
+                        modalStatusTarefa.value = itemClicado.statusTarefa;
                         modalMensagem.value = itemClicado.mensagem;
                         modalAutorTarefa.value = itemClicado.autorTarefa;
 
                         modal.style.display = 'block';
+
+                        // Define a variável global como o modal aberto
+                        modalAberto = modal;
                     });
 
                     divTarefas.append(divCard);
