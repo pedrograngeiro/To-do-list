@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                     `;
-                     // Adicione o código JavaScript aqui, após a criação dos elementos do cartão
+                    // Adicione o código JavaScript aqui, após a criação dos elementos do cartão
                     const progressSteps =
                         divCard.querySelectorAll('.progressbar li');
                     const selectedStep = item.statusTarefa;
@@ -112,19 +112,25 @@ document.addEventListener('DOMContentLoaded', function () {
                             step.classList.remove('active');
                         }
                     });
+
                     // click no botão de editar
                     const meuBotao = divCard.querySelector('.fa-regular');
                     meuBotao.addEventListener('click', function () {
                         const cardIndex = this.getAttribute('data-card-index');
                         const itemClicado = tarefasDoFirebase[cardIndex];
 
+                        // Selecionando o modal dentro do DOM
                         const modal = document.getElementById('modalCard');
                         const modalNomeTarefa =
                             modal.querySelector('#nomeTarefa');
-                        const modalOrigemProjeto =
-                            modal.querySelector('#origemProjeto');
-                        const modalStatusTarefa =
-                            modal.querySelector('#statusTarefa');
+                        const modalOrigemProjeto = modal.querySelector(
+                            '#origemProjetoSelect'
+                        );
+
+                        // Selecionando o campo de status dentro do modal usando o ID correto
+                        const modalStatusTarefa = modal.querySelector(
+                            '#statusTarefaSelect'
+                        ); // Adicione esta linha
                         const modalMensagem = modal.querySelector('#mensagem');
                         const modalAutorTarefa =
                             modal.querySelector('#autorTarefa');
@@ -132,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         // Preencha os campos do modal com os dados do item clicado
                         modalNomeTarefa.value = itemClicado.nomeTarefa;
                         modalOrigemProjeto.value = itemClicado.origemProjeto;
-                        modalStatusTarefa.value = itemClicado.statusTarefa;
+                        modalStatusTarefa.value = itemClicado.statusTarefa; // Defina o valor do campo de status
                         modalMensagem.value = itemClicado.mensagem;
                         modalAutorTarefa.value = itemClicado.autorTarefa;
 
