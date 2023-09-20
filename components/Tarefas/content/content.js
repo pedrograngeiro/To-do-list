@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     };
 
                     // enviar os dados para o servidor
-                    console.log(JSON.stringify(formData));
+                    // console.log(JSON.stringify(formData));
                     adicionarNovaTarefa(formData);
                 });
         })

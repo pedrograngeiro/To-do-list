@@ -6,8 +6,15 @@ export const listarTarefas = (database) => {
     return new Promise((resolve, reject) => {
         listaRef.on('value', (snapshot) => {
             const lista = snapshot.val();
-            const tarefas = Object.values(lista); // Convertendo o objeto para array
-            resolve(tarefas);
+            const tarefasComIDs = [];
+
+            for (const itemKey in lista) {
+                const item = lista[itemKey];
+                item.id = itemKey; // Adicione o ID como um campo separado
+                tarefasComIDs.push(item);
+            }
+
+            resolve(tarefasComIDs);
         });
     });
 };
@@ -61,7 +68,6 @@ export const editarTarefa = async (data, numCard) => {
 // };
 
 export const adicionarNovaTarefa = async (data) => {
-    // Altere o parâmetro de 'tarefa' para 'data'
     const novaTarefa = {
         nomeTarefa: data.nomeTarefa || 'Nova Tarefa',
         origemProjeto: data.origemProjeto || 'Outros',
@@ -88,15 +94,36 @@ export const adicionarNovaTarefa = async (data) => {
     const database = firebase.database(); // Obtenha a referência do banco de dados aqui (se não estiver no escopo anterior)
     const listaRef = database.ref('lista');
 
+    // O ID único é gerado automaticamente quando usamos push()
     const novaTarefaRef = listaRef.push();
 
     try {
         await novaTarefaRef.set(novaTarefa);
-        console.log('Nova tarefa adicionada com sucesso!');
+        const novoID = novaTarefaRef.key; // Obtenha o ID gerado
+        console.log('Nova tarefa adicionada com sucesso. ID:', novoID);
     } catch (error) {
-        console.log('Erro ao adicionar nova tarefa: ', error);
+        // console.log('Erro ao adicionar nova tarefa: ', error);
     }
 };
+
+// export const listarTarefasComIDs = (database) => {
+//     const listaRef = database.ref('lista');
+
+//     return new Promise((resolve, reject) => {
+//         listaRef.on('value', (snapshot) => {
+//             const lista = snapshot.val();
+//             const tarefasComIDs = [];
+
+//             for (const itemKey in lista) {
+//                 const item = lista[itemKey];
+//                 item.id = itemKey; // Adicione o ID como um campo separado
+//                 tarefasComIDs.push(item);
+//             }
+
+//             resolve(tarefasComIDs);
+//         });
+//     });
+// };
 
 (function () {
     firebase.initializeApp(firebaseConfig());

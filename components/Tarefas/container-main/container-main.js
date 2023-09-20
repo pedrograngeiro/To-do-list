@@ -19,8 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 );
 
                 divTarefas.classList.add('grid-container');
+                console.log(listarTarefas(database));
                 tarefasDoFirebase.forEach(function (item, index) {
                     const divCard = document.createElement('div');
+                    console.log(item);
                     divCard.innerHTML = `
                         <div class="grid-item">
                             <i id="meuBotao" class="fa-regular fa-pen-to-square" data-card-index="${index}"></i>
