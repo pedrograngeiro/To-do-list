@@ -125,11 +125,23 @@ export const adicionarNovaTarefa = async (data) => {
 //     });
 // };
 
+export const excluirTarefaPorId = async (database, taskId) => {
+    const listaRef = database.ref('lista');
+
+    try {
+        await listaRef.child(taskId).remove();
+        console.log('Tarefa excluída com sucesso.');
+    } catch (error) {
+        console.error('Erro ao excluir a tarefa:', error);
+    }
+};
+
 (function () {
     firebase.initializeApp(firebaseConfig());
 
     const database = firebase.database();
 
+    // excluirTarefaPorId(database, '-Nenntff33YScxnImCke');
     // listarSistemaInterno(database)
     //     .then((estadosDoFirebase) => {
     //         console.log(

@@ -1,4 +1,8 @@
-import { listarTarefas, editarTarefa } from '../../../assets/js/crud.js';
+import {
+    listarTarefas,
+    editarTarefa,
+    excluirTarefaPorId,
+} from '../../../assets/js/crud.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     let modalAberto = null;
@@ -19,13 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 );
 
                 divTarefas.classList.add('grid-container');
-                console.log(listarTarefas(database));
+                // console.log(listarTarefas(database));
                 tarefasDoFirebase.forEach(function (item, index) {
                     const divCard = document.createElement('div');
                     console.log(item);
                     divCard.innerHTML = `
                         <div class="grid-item">
                             <i id="meuBotao" class="fa-regular fa-pen-to-square" data-card-index="${index}"></i>
+                            <i id="meuBotaoExcluir" class="fa-solid fa-trash" data-card-index="${index}"></i>
                             <div class='card'>
                                 <h4 id='user_id' class='nome' data-user=''>${
                                     item.autorTarefa
@@ -118,10 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
 
                     // click no botão de editar
-                    const meuBotao = divCard.querySelector('.fa-regular');
+                    const meuBotao = divCard.querySelector('.fa-pen-to-square');
                     meuBotao.addEventListener('click', function () {
                         const cardIndex = this.getAttribute('data-card-index');
                         const itemClicado = tarefasDoFirebase[cardIndex];
+                        console.log(itemClicado);
 
                         // Selecionando o modal dentro do DOM
                         const modal = document.getElementById('modalCard');
@@ -162,6 +168,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // Define a variável global como o modal aberto
                         modalAberto = modal;
+                    });
+
+                    // click no botão de excluir
+                    const meuBotaoExcluir = divCard.querySelector('.fa-trash');
+                    meuBotaoExcluir.addEventListener('click', function () {
+                        const cardIndex = this.getAttribute('data-card-index');
+                        const itemClicado = tarefasDoFirebase[cardIndex];
+                        console.log(itemClicado);
+
+                        excluirTarefaPorId(database, itemClicado.id);
                     });
 
                     divTarefas.append(divCard);
