@@ -106,6 +106,18 @@ export const adicionarNovaTarefa = async (data) => {
     }
 };
 
+export const editarTarefaPorId = async (database, taskId, novosDados) => {
+    const listaRef = database.ref('lista');
+
+    try {
+        const tarefaRef = listaRef.child(taskId);
+        await tarefaRef.update(novosDados);
+        console.log('Tarefa atualizada com sucesso.');
+    } catch (error) {
+        console.error('Erro ao atualizar a tarefa:', error);
+    }
+};
+
 // export const listarTarefasComIDs = (database) => {
 //     const listaRef = database.ref('lista');
 

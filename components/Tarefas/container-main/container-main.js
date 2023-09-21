@@ -2,6 +2,7 @@ import {
     listarTarefas,
     editarTarefa,
     excluirTarefaPorId,
+    editarTarefaPorId,
 } from '../../../assets/js/crud.js';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -136,8 +137,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         const modalOrigemProjeto = modal.querySelector(
                             '#origemProjetoSelect'
                         );
-
-                        // Selecionando o campo de status dentro do modal usando o ID correto
                         const modalStatusTarefa = modal.querySelector(
                             '#statusTarefaSelect'
                         );
@@ -168,6 +167,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // Define a variável global como o modal aberto
                         modalAberto = modal;
+
+                        // Adicione um evento de clique ao botão "Salvar" do modal de edição
+                        const salvarEdicaoBtn =
+                            modal.querySelector('#submitButton'); // Use o ID correto
+                        if (salvarEdicaoBtn) {
+                            salvarEdicaoBtn.addEventListener(
+                                'click',
+                                function () {
+                                    // Coleta os novos dados dos campos do modal
+                                    const novosDados = {
+                                        nomeTarefa: modalNomeTarefa.value,
+                                        origemProjeto: modalOrigemProjeto.value,
+                                        statusTarefa: modalStatusTarefa.value,
+                                        mensagem: modalMensagem.value,
+                                        autorTarefa: modalAutorTarefa.value,
+                                    };
+
+                                    // Chama a função para editar a tarefa com os novos dados
+                                    editarTarefaPorId(
+                                        database,
+                                        itemClicado.id,
+                                        novosDados
+                                    );
+
+                                    // Fecha o modal após a edição
+                                    modal.style.display = 'none';
+                                }
+                            );
+                        } else {
+                            console.error(
+                                'Elemento #submitButton não encontrado no DOM.'
+                            );
+                        }
                     });
 
                     // click no botão de excluir
