@@ -177,7 +177,39 @@ document.addEventListener('DOMContentLoaded', function () {
                         const itemClicado = tarefasDoFirebase[cardIndex];
                         console.log(itemClicado);
 
-                        excluirTarefaPorId(database, itemClicado.id);
+                        // Selecionando o modal de confirmação dentro do DOM
+                        const modalConfirmacao =
+                            document.getElementById('modalConfirmacao');
+                        const confirmarExclusaoBtn =
+                            modalConfirmacao.querySelector(
+                                '#confirmarExclusao'
+                            );
+                        const cancelarExclusaoBtn =
+                            modalConfirmacao.querySelector('#cancelarExclusao');
+
+                        // Adicione um evento de clique ao botão "Confirmar Exclusão"
+                        confirmarExclusaoBtn.addEventListener(
+                            'click',
+                            function () {
+                                // Fecha o modal de confirmação
+                                modalConfirmacao.style.display = 'none';
+
+                                // Execute a função para excluir a tarefa
+                                excluirTarefaPorId(database, itemClicado.id);
+                            }
+                        );
+
+                        // Adicione um evento de clique ao botão "Cancelar Exclusão"
+                        cancelarExclusaoBtn.addEventListener(
+                            'click',
+                            function () {
+                                // Fecha o modal de confirmação
+                                modalConfirmacao.style.display = 'none';
+                            }
+                        );
+
+                        // Abra o modal de confirmação
+                        modalConfirmacao.style.display = 'block';
                     });
 
                     divTarefas.append(divCard);
