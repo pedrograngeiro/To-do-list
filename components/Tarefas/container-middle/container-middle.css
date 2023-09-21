@@ -196,3 +196,7 @@
     align-self: center;
     padding-left: 10px;
 }
+#meuBotaoExcluir,
+#meuBotao{
+    cursor: pointer;
+}
