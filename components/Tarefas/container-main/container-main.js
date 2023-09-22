@@ -193,6 +193,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                     // Fecha o modal após a edição
                                     modal.style.display = 'none';
+
+                                    setTimeout(function () {
+                                        location.reload();
+                                        console.log('Executed after 1 second');
+                                    }, 1000);
                                 }
                             );
                         } else {
