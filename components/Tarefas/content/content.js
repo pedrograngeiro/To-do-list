@@ -54,6 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     // enviar os dados para o servidor
                     // console.log(JSON.stringify(formData));
                     adicionarNovaTarefa(formData);
+
+                    setTimeout(function () {
+                        location.reload();
+                        console.log('Executed after 1 second');
+                    }, 1000);
                 });
         })
         .catch((error) => {
