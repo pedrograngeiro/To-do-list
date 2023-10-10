@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     estadosDoFirebase.forEach(function (item) {
                         const divCard = document.createElement('div');
                         divCard.innerHTML = `
+                        <div class="boxItens ${item.status}">
                         <div id="card-sistema-interno">
                             <div class="circle">
                                 <span id="estado" class="estados">${item.estado}</span>
@@ -30,16 +31,44 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div id="status" class='status_${item.status}'></div>
                         </div>
+                        </div>
                         `;
                         divSI.appendChild(divCard);
                     });
                 })
-                .catch((error) => {
-                    console.error(
-                        'Erro ao listar estados do sistema interno:',
-                        error
-                    );
+
+                const menu = document.querySelector('.menu');
+                const lists = document.querySelectorAll('.list');
+
+                lists.forEach((list) => {
+                    list.addEventListener('click', () => {
+                        const value = list.getAttribute('data-filter');
+                        const boxItens = document.querySelectorAll('.boxItens');
+
+                        if (value === 'tudo') {
+                            boxItens.forEach((boxItem) => {
+                                boxItem.style.display = 'block';
+                            });
+                        } else {
+                            boxItens.forEach((boxItem) => {
+                                if (boxItem.classList.contains(value)) {
+                                    boxItem.style.display = 'block';
+                                } else {
+                                    boxItem.style.display = 'none';
+                                }
+                            });
+                        }
+
+                        lists.forEach((otherList) => {
+                            if (otherList === list) {
+                                list.classList.add('active');
+                            } else {
+                                otherList.classList.remove('active');
+                            }
+                        });
+                    });
                 });
+
         })
         .catch((error) => {
             console.error('Error loading header:', error);
