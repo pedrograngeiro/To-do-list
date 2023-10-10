@@ -12,6 +12,7 @@
     --cyan-blue: #137aa7;
         --greey: #dfe2e8;
 }
+
 #container-cards-si {
     display: flex;
     justify-content: center;
@@ -38,7 +39,7 @@
     max-width: 1100px;
     margin: 30px auto;
 }
-.menu li{
+body .menu li{
     list-style: none;
     padding: 10px 20px;
     border-radius: 10px;
@@ -48,10 +49,19 @@
     text-align: center;
     transition: 0.5s;
 }
+body.active .menu li{
+    color: #f5f5f5;
+}
+
 .menu li:hover{
     color: #fff;
     background: var(--deep-blue);
 }
+body.active .menu li:hover{
+    color: var(--deep-blue);
+    background: var(--greey);
+}
+
 .menu li.active{
     text-decoration: none;
     color: #fff;
