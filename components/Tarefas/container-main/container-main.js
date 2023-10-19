@@ -131,7 +131,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log(itemClicado);
 
                         // Selecionando o modal dentro do DOM
-                        const modal = document.getElementById('modalCard');
+                        const modal =
+                            document.getElementById('modalCardTarefa');
                         const modalNomeTarefa =
                             modal.querySelector('#nomeTarefa');
                         const modalOrigemProjeto = modal.querySelector(
@@ -215,8 +216,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log(itemClicado);
 
                         // Selecionando o modal de confirmação dentro do DOM
-                        const modalConfirmacao =
-                            document.getElementById('modalConfirmacao');
+                        const modalConfirmacao = document.getElementById(
+                            'modalConfirmacaoTarefa'
+                        );
                         const confirmarExclusaoBtn =
                             modalConfirmacao.querySelector(
                                 '#confirmarExclusao'

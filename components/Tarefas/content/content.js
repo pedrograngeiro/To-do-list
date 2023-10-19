@@ -27,20 +27,20 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             document
-                .getElementById('tarefaForm')
+                .getElementById('tarefaForm1')
                 .addEventListener('submit', function (event) {
                     event.preventDefault();
 
                     // pegar o dados dos campos forms
                     var nomeTarefa =
-                        document.getElementById('nomeTarefa').value;
+                        document.getElementById('nomeTarefa1').value;
                     var origemProjeto =
                         document.getElementById('origemProjeto').value;
                     var statusTarefa =
                         document.getElementById('statusTarefa').value;
-                    var mensagem = document.getElementById('mensagem').value;
+                    var mensagem = document.getElementById('mensagem1').value;
                     var autorTarefa =
-                        document.getElementById('autorTarefa').value;
+                        document.getElementById('autorTarefa1').value;
 
                     // criar um objeto JSON com os dados
                     const formData = {

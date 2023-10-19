@@ -53,53 +53,53 @@ fieldset {
     border-radius: 5px;
     background: var(--greey);
 }
-#tarefaForm .nomeTarefa {
+#tarefaForm1 .nomeTarefa {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .nomeTarefa input {
+#tarefaForm1 .nomeTarefa input {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
     color: var(--deep-blue);
 }
-#tarefaForm .origem {
+#tarefaForm1 .origem {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .origem select {
+#tarefaForm1 .origem select {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
-#tarefaForm .status {
+#tarefaForm1 .status {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .status select {
+#tarefaForm1 .status select {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
-#tarefaForm .mensagem {
+#tarefaForm1 .mensagem {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .mensagem textarea {
+#tarefaForm1 .mensagem textarea {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
-#tarefaForm .autor {
+#tarefaForm1 .autor {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-#tarefaForm .autor input {
+#tarefaForm1 .autor input {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
