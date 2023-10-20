@@ -10,15 +10,14 @@
             rel="stylesheet"
             href="components/container-esquerdo/container-esquerdo.css"
         />
-        <link rel="stylesheet" href="components/Tarefas/content/content.css" />
+
         <link
             rel="stylesheet"
             href="components/Tarefas/container-middle/container-middle.css"
         />
-        <link
-            rel="stylesheet"
-            href="components/Tarefas/container-main/container-main.css"
-        />
+
+        <link rel="stylesheet" href="assets/css/login.css" />
+
         <link rel="stylesheet" href="components/footer/footer.css" />
     </head>
     <body>
@@ -30,8 +29,32 @@
             </div>
             <!-- <div id="container-middle"> </div> -->
             <section>
-                <main id="content"></main>
-                <div id="grid-container-main"></div>
+                <div class="login-container">
+                    <div id="login">
+                        <h1>Login</h1>
+                        <form id="formLogin">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    name="email"
+                                    id="email"
+                                    placeholder="E-mail"
+                                    autocomplete="off"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Senha"
+                                    autocomplete="off"
+                                />
+                            </div>
+                            <button type="submit">Entrar</button>
+                        </form>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -40,14 +63,7 @@
         <script src="assets/js/app.js"></script>
         <script src="components/header/header.js"></script>
         <script src="components/container-esquerdo/container-esquerdo.js"></script>
-        <script
-            type="module"
-            src="components/Tarefas/container-main/container-main.js"
-        ></script>
-        <script
-            type="module"
-            src="components/Tarefas/content/content.js"
-        ></script>
+
         <script src="components/footer/footer.js"></script>
 
         <script type="module" src="assets/js/crud.js"></script>
