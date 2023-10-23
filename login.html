@@ -32,7 +32,7 @@
                 <div class="login-container">
                     <div id="login">
                         <h1>Login</h1>
-                        <form id="formLogin">
+                        <form method="post" id="formLogin">
                             <div class="form-group">
                                 <input
                                     type="text"
@@ -59,6 +59,29 @@
         </div>
 
         <footer id="footer"></footer>
+
+        <script>
+            const loginForm = document.getElementById('formLogin');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+
+            // Primeiro vou verificar se existe dados em localStorage
+
+            const savedEmail = localStorage.getItem('email');
+            const savedPassword = localStorage.getItem('password');
+            if (savedEmail && savedPassword) {
+                emailInput.value = savedEmail;
+                passwordInput.value = savedPassword;
+            }
+
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Salvar os dados em local storage
+                localStorage.setItem('email', emailInput.value);
+                localStorage.setItem('password', passwordInput.value);
+            });
+        </script>
         <script type="module" src="assets/js/dependencias.js"></script>
         <script src="assets/js/app.js"></script>
         <script src="components/header/header.js"></script>
