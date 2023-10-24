@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div class="campo-arquivo">
                                 <span id="ano-mes" class='campo-input'>${item.ano_mes}</span>
                                 <span id="tipo-arquivo" class='campo-input'>${item.tipo}</span>
+                                <span id="tipo-tribunal" class='campo-input'>${item.tribunal}</span>
                             </div>
                             <div id="status" class='status_${item.status}'></div>
                         </div>

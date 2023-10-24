@@ -25,8 +25,8 @@
 #card-sistema-interno {
     display: flex;
     justify-content: space-between;
-    height: 54px;
-    width: 160px;
+    height: 70px;
+    width: 200px;
     margin-left: 5px;
     border-radius: 5px;
     background: var(--bg-fill);
@@ -71,9 +71,9 @@ body.active .menu li:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    height: 40px;
-    width: 40px;
+    margin: 4px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     background: var(--night-blue);
     border: solid 2px;
@@ -92,14 +92,15 @@ body.active .menu li:hover{
 }
 #card-sistema-interno .campo-arquivo .campo-input {
     display: flex;
-    width: 80px;
+    width: 100px;
     background: var(--bg-input);
     border-radius: 3px;
     height: 18px;
+    gap: 2px;
     justify-content: flex-end;
     align-items: flex-end;
     padding-right: 5px;
-    font-size: 14px;
+    font-size: 13px;
 }
 #card-sistema-interno .status_false {
     display: flex;
