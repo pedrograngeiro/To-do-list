@@ -13,6 +13,7 @@ response = requests.get(firebase_url)
 if response.status_code == 200:
     data = response.json()
     dados_pastas = pd.DataFrame.from_dict(data).T
+    dados_pastas.to_csv('dados_Pastas_firebase.csv')
 else:
     print("Erro ao obter os dados do Firebase")
     dados_pastas = pd.read_csv('dadosPastas.csv', sep=',')
