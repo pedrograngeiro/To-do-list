@@ -1,4 +1,7 @@
-import { listarSistemaInterno } from '../../../../assets/js/crud.js';
+import {
+    listarSistemaInterno,
+    listarUsuarios,
+} from '../../../../assets/js/crud.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch(
@@ -11,15 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const database = firebase.database();
 
-            listarSistemaInterno(database)
-                .then((estadosDoFirebase) => {
-                    const divSI = document.getElementById('container-cards-si');
+            listarSistemaInterno(database).then((estadosDoFirebase) => {
+                const divSI = document.getElementById('container-cards-si');
 
-                    divSI.classList.add('card-sistema-interno');
+                divSI.classList.add('card-sistema-interno');
 
-                    estadosDoFirebase.forEach(function (item) {
-                        const divCard = document.createElement('div');
-                        divCard.innerHTML = `
+                estadosDoFirebase.forEach(function (item) {
+                    const divCard = document.createElement('div');
+                    divCard.innerHTML = `
                         <div class="boxItens ${item.status}">
                         <div id="card-sistema-interno">
                             <div class="circle">
@@ -33,42 +35,41 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         </div>
                         `;
-                        divSI.appendChild(divCard);
-                    });
-                })
+                    divSI.appendChild(divCard);
+                });
+            });
 
-                const menu = document.querySelector('.menu');
-                const lists = document.querySelectorAll('.list');
+            const menu = document.querySelector('.menu');
+            const lists = document.querySelectorAll('.list');
 
-                lists.forEach((list) => {
-                    list.addEventListener('click', () => {
-                        const value = list.getAttribute('data-filter');
-                        const boxItens = document.querySelectorAll('.boxItens');
+            lists.forEach((list) => {
+                list.addEventListener('click', () => {
+                    const value = list.getAttribute('data-filter');
+                    const boxItens = document.querySelectorAll('.boxItens');
 
-                        if (value === 'tudo') {
-                            boxItens.forEach((boxItem) => {
+                    if (value === 'tudo') {
+                        boxItens.forEach((boxItem) => {
+                            boxItem.style.display = 'block';
+                        });
+                    } else {
+                        boxItens.forEach((boxItem) => {
+                            if (boxItem.classList.contains(value)) {
                                 boxItem.style.display = 'block';
-                            });
-                        } else {
-                            boxItens.forEach((boxItem) => {
-                                if (boxItem.classList.contains(value)) {
-                                    boxItem.style.display = 'block';
-                                } else {
-                                    boxItem.style.display = 'none';
-                                }
-                            });
-                        }
-
-                        lists.forEach((otherList) => {
-                            if (otherList === list) {
-                                list.classList.add('active');
                             } else {
-                                otherList.classList.remove('active');
+                                boxItem.style.display = 'none';
                             }
                         });
+                    }
+
+                    lists.forEach((otherList) => {
+                        if (otherList === list) {
+                            list.classList.add('active');
+                        } else {
+                            otherList.classList.remove('active');
+                        }
                     });
                 });
-
+            });
         })
         .catch((error) => {
             console.error('Error loading header:', error);
