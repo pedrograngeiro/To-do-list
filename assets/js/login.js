@@ -1,3 +1,4 @@
+import { listarUsuarios } from '../js/crud.js';
 const loginForm = document.getElementById('formLogin');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
@@ -18,5 +19,30 @@ loginForm.addEventListener('submit', function (event) {
     localStorage.setItem('email', emailInput.value);
     localStorage.setItem('password', passwordInput.value);
 
-    window.location.href = '/';
+    // Montar um objeto com os dados do usuário
+    const userData = {
+        email: emailInput.value, // Use 'email' para email
+        password: passwordInput.value, // Use 'password' para senha (como string)
+    };
+    console.log(userData);
+
+    listarUsuarios().then((usuarios) => {
+        console.log(usuarios);
+        const usuarioEncontrado = usuarios.find(function (usuario) {
+            return (
+                usuario.login === userData.email && // Use 'login' no Firebase
+                usuario.senha === userData.password // Use 'senha' no Firebase
+            );
+        });
+
+        if (usuarioEncontrado) {
+            console.log('Usuário encontrado');
+            // window.location.href = '/components/Painel/painel.html';
+            console.log('funcionou');
+        } else {
+            console.log('Usuário não encontrado');
+        }
+    });
+
+    // window.location.href = '/';
 });

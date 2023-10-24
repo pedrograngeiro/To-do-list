@@ -19,8 +19,9 @@ export const listarTarefas = (database) => {
     });
 };
 
-export const listarUsuarios = (database) => {
-    const usuariosRef = database.ref('users/usuarios'); // Caminho correto
+export const listarUsuarios = () => {
+    const database = firebase.database();
+    const usuariosRef = database.ref('users/usuarios');
 
     return new Promise((resolve, reject) => {
         usuariosRef.on('value', (snapshot) => {
@@ -28,20 +29,16 @@ export const listarUsuarios = (database) => {
             const usuariosComIDs = [];
 
             if (usuariosData) {
-                // Iterar sobre os objetos numerados
                 for (const numero in usuariosData) {
                     if (usuariosData.hasOwnProperty(numero)) {
                         const usuario = usuariosData[numero];
-                        usuario.numero = numero; // Adicione o número como um campo separado
+                        usuario.numero = numero;
                         usuariosComIDs.push(usuario);
                     }
                 }
             }
 
             resolve(usuariosComIDs);
-
-            // Console.log para exibir os dados dos usuários
-            console.log('Dados dos usuários:', usuariosComIDs);
         });
     });
 };
@@ -179,7 +176,7 @@ export const excluirTarefaPorId = async (database, taskId) => {
     firebase.initializeApp(firebaseConfig());
 
     const database = firebase.database();
-    listarUsuarios(database);
+    // listarUsuarios(database);
 
     // excluirTarefaPorId(database, '-Nenntff33YScxnImCke');
     // listarSistemaInterno(database)
