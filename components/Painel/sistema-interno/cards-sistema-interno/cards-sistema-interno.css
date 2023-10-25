@@ -1,5 +1,8 @@
 :root {
     --bg-fill: #7d7aff;
+    --bg-estadual: #694dbd;
+    --bg-federal: #2200ad;
+    --bg-trabalhista: #474aff;
     --bg-input: #dfdfff;
     --stroke-border: #07182e;
     --bg-status-true: #00ff00;
@@ -11,6 +14,12 @@
     --lemon-yellow: #fae500;
     --cyan-blue: #137aa7;
         --greey: #dfe2e8;
+}
+#cardSI{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #container-cards-si {
@@ -29,8 +38,20 @@
     width: 200px;
     margin-left: 5px;
     border-radius: 5px;
-    background: var(--bg-fill);
+
     z-index: 1;
+}
+.classe_estadual{
+   background: var(--bg-estadual);
+}
+.classe_federal{
+   background: var(--bg-federal);
+}
+.classe_trabalhista{
+   background: var(--bg-trabalhista);
+}
+.classe_undefined{
+    background: var(--bg-fill);
 }
 .menu{
     display: flex;

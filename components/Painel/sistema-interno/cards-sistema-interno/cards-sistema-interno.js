@@ -13,17 +13,19 @@ document.addEventListener('DOMContentLoaded', function () {
             cardSiElement.innerHTML = cardSI;
 
             const database = firebase.database();
+            const dados_txt = [];
 
             listarSistemaInterno(database).then((estadosDoFirebase) => {
                 const divSI = document.getElementById('container-cards-si');
 
                 divSI.classList.add('card-sistema-interno');
+                // criando um array para armazenar os dados
 
                 estadosDoFirebase.forEach(function (item) {
                     const divCard = document.createElement('div');
                     divCard.innerHTML = `
                         <div class="boxItens ${item.status}">
-                        <div id="card-sistema-interno">
+                        <div id="card-sistema-interno" class='classe_${item.categoria}'>
                             <div class="circle">
                                 <span id="estado" class="estados">${item.estado}</span>
                             </div>
@@ -37,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         `;
                     divSI.appendChild(divCard);
+                     // Adicione os dados ao array dados_txt
+                    dados_txt.push({
+                        inicio_ano: item.inicio_ano,
+                        fim_ano: item.fim_ano,
+                        estado: item.estado,
+                        tribunal: item.tribunal
+                    });
                 });
             });
 
@@ -71,7 +80,38 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 });
             });
-        })
+
+            console.log(dados_txt);
+            
+            const color_discrete_sequence = Plotly.d3.scale.category10();
+
+            const trace = {
+                x: dados_txt.map(function(dados){return new Date(dados.inicio_ano);}),
+                y: dados_txt.map(function(data) { return data.estado; }),
+                xend: dados_txt.map(function (data) { return new Date(data.fim_ano); }),
+                type: 'scatter',
+                line: {
+                    color: dados_txt.map(function (data) { return color_discrete_sequence(data.tribunal); }),
+                    width: 2
+                },
+                hoverinfo: 'x+y',
+            };
+
+            const layout = {
+                title: 'Linhas do Tempo das Pastas por Estado',
+                xaxis: {
+                    title: 'Ano'
+                },
+                yaxis: {
+                    title: 'Estado'
+                }
+            };
+
+            const data = [trace];
+
+            Plotly.newPlot('timeline-plot', data, layout);
+            })
+
         .catch((error) => {
             console.error('Error loading header:', error);
         });
