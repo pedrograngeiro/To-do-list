@@ -45,11 +45,11 @@ fig = px.timeline(
 )
 
 # # Definir as dimensões da figura (2000x1000 pixels)
-# fig.update_layout(
-#     autosize=True,
-#     width=2000,
-#     height=1000
-# )
+fig.update_layout(
+    autosize=True,
+    width=1024,
+    height=848
+)
 
 fig.update_layout(
     title="Linhas do Tempo das Pastas por Estado",
@@ -57,7 +57,6 @@ fig.update_layout(
     yaxis_title="Estado"
 )
 
-fig.show()
 
 # Salvar o gráfico como um arquivo SVG
 fig.write_image("grafico_pastas.svg")
