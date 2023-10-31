@@ -1,10 +1,6 @@
-import {
-    listarSistemaInterno,
-    listarUsuarios,
-} from '../../../../assets/js/crud.js';
+import { listarSistemaInterno } from '../../../../assets/js/crud.js';
 
-document.addEventListener('DOMContentLoaded', function () {
-});
+document.addEventListener('DOMContentLoaded', function () {});
 fetch(
     'components/Painel/sistema-interno/cards-sistema-interno/cards-sistema-interno.html'
 )
@@ -75,17 +71,17 @@ fetch(
         });
 
         // parte do grafico
-        const grafico = document.querySelector('.print_svg')
-        const objectElement = document.createElement("object");
+        const grafico = document.querySelector('.print_svg');
+        const objectElement = document.createElement('object');
         // atributos do grafico
-        objectElement.setAttribute("data", 'components/Painel/sistema-interno/cards-sistema-interno/grafico_pastas.svg');
-        objectElement.setAttribute("type", "image/svg+xml");
+        objectElement.setAttribute(
+            'data',
+            'components/Painel/sistema-interno/cards-sistema-interno/grafico_pastas.svg'
+        );
+        objectElement.setAttribute('type', 'image/svg+xml');
         // insero o grafico
         grafico.appendChild(objectElement);
-
     })
     .catch((error) => {
         console.error('Error loading header:', error);
-    })
-
-
+    });
