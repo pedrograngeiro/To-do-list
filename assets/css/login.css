@@ -49,10 +49,62 @@
     font-size: 18px;
 }
 
+#campo-botoes {
+    display: inline;
+}
+
 #formLogin button:hover {
     background-color: #1282d0;
 }
 
 #formLogin button[type='submit'] {
     margin-top: 15px;
+}
+
+#authForm {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+}
+
+#authFormTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 30%;
+    padding: 10px;
+    background-color: #06577b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #142c4c;
+}
+
+#register,
+#access {
+    margin-top: 10px;
+    margin-left: 20%;
 }
