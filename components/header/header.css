@@ -121,3 +121,8 @@ body {
 .fa-right-to-bracket {
     color: #fff;
 }
+
+#logout-button {
+    width: 60px;
+    margin: 0 0 0 10px;
+}
