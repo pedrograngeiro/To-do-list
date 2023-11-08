@@ -1,4 +1,5 @@
 import { logout } from '../../assets/js/login.js';
+import { checkLoginStatus } from '../../assets/js/checkLogin.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch('components/header/header.html')
@@ -21,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (logoutButton) {
                 logoutButton.addEventListener('click', logout);
             }
+
+            checkLoginStatus();
         })
         .catch((error) => {
             console.error('Error loading header:', error);
