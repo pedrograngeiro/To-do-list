@@ -16,14 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 body.classList.toggle('active');
             }
 
-            // Adicione o ouvinte de evento para o botão de logout
-            const logoutButton = document.getElementById('logout-button');
-
-            if (logoutButton) {
-                logoutButton.addEventListener('click', logout);
-            }
-
             checkLoginStatus();
+
+            // Se clicar na div com id 'status-login', chame a função logout
+            const statusLogin = document.getElementById('status-login');
+            if (statusLogin) {
+                statusLogin.addEventListener('click', logout);
+            }
         })
         .catch((error) => {
             console.error('Error loading header:', error);

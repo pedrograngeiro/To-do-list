@@ -47,14 +47,11 @@ function logout() {
     firebase
         .auth()
         .signOut()
-        .then(function () {
-            console.log('Logout realizado com sucesso');
-            // Verifique o status de login aqui e remova a classe 'active' se não estiver logado
-            checkLoginStatus();
+        .then(() => {
+            console.log('Usuário deslogado');
         })
-        .catch(function (error) {
-            console.log('Falha no logout');
-            console.log(error);
+        .catch((error) => {
+            console.error('Erro ao deslogar:', error);
         });
 }
 
