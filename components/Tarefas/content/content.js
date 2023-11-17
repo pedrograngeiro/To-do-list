@@ -50,14 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         mensagem,
                         autorTarefa,
                     };
-
-                    // enviar os dados para o servidor
-                    // console.log(JSON.stringify(formData));
                     adicionarNovaTarefa(formData);
 
-                    setTimeout(function () {
+                    setTimeout(() => {
                         location.reload();
-                        console.log('Executed after 1 second');
+                        console.log('Executado após 1 segundo');
                     }, 1000);
                 });
         })
