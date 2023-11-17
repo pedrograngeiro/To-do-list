@@ -5,19 +5,20 @@
     --coral-red: #ff005a;
     --lemon-yellow: #fae500;
     --cyan-blue: #137aa7;
-        --greey: #dfe2e8;
+    --grey: #dfe2e8;
 }
 
 .grid-item {
     position: relative;
-    background-color: var(--cyan-blue);
-    border: 1px solid var(--night-blue);
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
     width: 320px;
     height: 380px;
-    color: var(--greey);
+    padding: 10px;
+    text-align: center;
+    background-color: #353d40;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    color: var(--grey);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
 }
 
 .card {
@@ -34,8 +35,8 @@
 }
 
 .card h4:before {
-    content: attr(data-user);
     color: #fff;
+    content: attr(data-user);
     font-size: 1.1rem;
 }
 
@@ -45,13 +46,10 @@
 }
 
 .titulo_e_progress .titulo_task {
+    border-radius: 5px;
     display: flex;
     gap: 5px;
     width: 260px;
-    border-radius: 5px;
-    padding-left: 10px;
-    border: none;
-    list-style: none;
 }
 
 .opcional {
@@ -101,16 +99,16 @@
 .container ul {
     list-style: none;
     display: flex;
-    width: 300px;
+    width: 320px;
     margin-top: 60px;
     padding: 0;
 }
 
 .container ul li {
     position: relative;
-    color: var(--deep-blue);
     width: 25%;
     text-align: center;
+    color: var(--deep-blue);
 }
 
 .container ul li:before {
@@ -143,24 +141,24 @@
     width: 0px;
 }
 
-.container ul li.active:before{
+.container ul li.active:before {
     background: var(--midnight-blue);
     color: var(--greey);
 }
-.container ul li.active:after{
+.container ul li.active:after {
     background: var(--midnight-blue);
 }
-.container ul li.active{
+.container ul li.active {
     color: var(--midnight-blue);
 }
-.container ul li.atual:before{
+.container ul li.atual:before {
     background: var(--night-blue);
-    color:var(--greey);
+    color: var(--greey);
 }
-.container ul li.atual:after{
+.container ul li.atual:after {
     background: var(--night-blue);
 }
-.container ul li.atual{
+.container ul li.atual {
     color: var(--night-blue);
 }
 
@@ -180,7 +178,6 @@
     padding: 10px;
     margin-left: 10px;
     border: 1px solid var(--night-blue);
-    border-radius: 5px;
     font-size: 14px;
 }
 
@@ -197,6 +194,23 @@
     padding-left: 10px;
 }
 #meuBotaoExcluir,
-#meuBotao{
+#meuBotao {
     cursor: pointer;
+}
+
+.container-descricao-tarefa {
+    width: 320px;
+    background-color: #fff;
+
+    margin: 0;
+    border-radius: 5px;
+}
+
+.container-descricao-tarefa p {
+    padding: 10px;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #353d40;
+    text-align: left;
 }

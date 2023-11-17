@@ -1,16 +1,25 @@
 :root {
-    --bg-fill: #7d7aff;
+    --bg-fill: #1282d0;
+    --bg-estadual: #1282d0;
+    --bg-federal: #1282d0;
+    --bg-trabalhista: #1282d0;
     --bg-input: #dfdfff;
     --stroke-border: #07182e;
     --bg-status-true: #00ff00;
     --bg-status-false: #ff0000;
-        --deep-blue: #181139;
+    --deep-blue: #181139;
     --night-blue: #142c4c;
     --midnight-blue: #06577b;
     --coral-red: #ff005a;
     --lemon-yellow: #fae500;
     --cyan-blue: #137aa7;
-        --greey: #dfe2e8;
+    --greey: #dfe2e8;
+}
+#cardSI {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #container-cards-si {
@@ -25,21 +34,33 @@
 #card-sistema-interno {
     display: flex;
     justify-content: space-between;
-    height: 54px;
-    width: 160px;
+    height: 70px;
+    width: 200px;
     margin-left: 5px;
     border-radius: 5px;
-    background: var(--bg-fill);
+
     z-index: 1;
 }
-.menu{
+.classe_estadual {
+    background: var(--bg-estadual);
+}
+.classe_federal {
+    background: var(--bg-federal);
+}
+.classe_trabalhista {
+    background: var(--bg-trabalhista);
+}
+.classe_undefined {
+    background: var(--bg-fill);
+}
+.menu {
     display: flex;
     justify-content: space-around;
     align-items: center;
     max-width: 1100px;
     margin: 30px auto;
 }
-body .menu li{
+body .menu li {
     list-style: none;
     padding: 10px 20px;
     border-radius: 10px;
@@ -49,20 +70,20 @@ body .menu li{
     text-align: center;
     transition: 0.5s;
 }
-body.active .menu li{
+body.active .menu li {
     color: #f5f5f5;
 }
 
-.menu li:hover{
+.menu li:hover {
     color: #fff;
     background: var(--deep-blue);
 }
-body.active .menu li:hover{
+body.active .menu li:hover {
     color: var(--deep-blue);
     background: var(--greey);
 }
 
-.menu li.active{
+.menu li.active {
     text-decoration: none;
     color: #fff;
     background: var(--night-blue);
@@ -71,9 +92,9 @@ body.active .menu li:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    height: 40px;
-    width: 40px;
+    margin: 4px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     background: var(--night-blue);
     border: solid 2px;
@@ -92,14 +113,15 @@ body.active .menu li:hover{
 }
 #card-sistema-interno .campo-arquivo .campo-input {
     display: flex;
-    width: 80px;
+    width: 100px;
     background: var(--bg-input);
     border-radius: 3px;
     height: 18px;
+    gap: 2px;
     justify-content: flex-end;
     align-items: flex-end;
     padding-right: 5px;
-    font-size: 14px;
+    font-size: 13px;
 }
 #card-sistema-interno .status_false {
     display: flex;

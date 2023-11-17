@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             gridContainerMain.innerHTML = gridMain;
 
             const database = firebase.database();
+            const statusSteps = ['E', 'D', 'H', 'P'];
 
             listarTarefas(database).then((tarefasDoFirebase) => {
                 const divTarefas = document.getElementById(
@@ -24,10 +25,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 );
 
                 divTarefas.classList.add('grid-container');
-                // console.log(listarTarefas(database));
+
                 tarefasDoFirebase.forEach(function (item, index) {
+                    const statusListItems = statusSteps
+                        .map(
+                            (step) =>
+                                `<li data-step='${step}' ${
+                                    item.statusTarefa === step
+                                        ? ' class="atual"'
+                                        : ''
+                                }></li>`
+                        )
+                        .join('');
                     const divCard = document.createElement('div');
-                    console.log(item);
                     divCard.innerHTML = `
                         <div class="grid-item">
                             <i id="meuBotao" class="fa-regular fa-pen-to-square" data-card-index="${index}"></i>
@@ -60,45 +70,27 @@ document.addEventListener('DOMContentLoaded', function () {
                                         }</span>
                                     </p>
                                 </div>
+
                                 <div id='card-oculto' class='active'>
-                                    <div class='container'>
-                                        <ul class='progressbar'>
-                                            <li data-step='E' ${
-                                                item.statusTarefa === 'E'
-                                                    ? ' class="atual"'
-                                                    : ''
-                                            }></li>
-                                            <li data-step='D' ${
-                                                item.statusTarefa === 'D'
-                                                    ? ' class="atual"'
-                                                    : ''
-                                            }></li>
-                                            <li data-step='H' ${
-                                                item.statusTarefa === 'H'
-                                                    ? ' class="atual"'
-                                                    : ''
-                                            }></li>
-                                            <li data-step='P' ${
-                                                item.statusTarefa === 'P'
-                                                    ? ' class="atual"'
-                                                    : ''
-                                            }></li>
-                                        </ul>
-                                    </div>
+                                <div class='container'>
+                                    <ul class='progressbar'>
+                                        ${statusListItems}
+                                    </ul>
+                                </div>
+                                
+                                <div class='container-descricao-tarefa'>
                                     <p>  
                                         <span id='mensagem-task'>${
                                             item.mensagem
                                         }</span>
                                     </p>
-                                    <p>${
-                                        item.update !== undefined
-                                            ? `<p>
-                                            Data Atualização:
-                                            <span id='atualizacao-data' class='data_span'>${item.update}</span>
-                                        </p>`
-                                            : ''
-                                    }</p>
                                 </div>
+                                
+                        
+                                ${item.update !== undefined ? `<p>` : ''}
+                            </div>
+                                
+                                
                             </div>
                         </div>
                     `;
