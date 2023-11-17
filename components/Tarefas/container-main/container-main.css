@@ -4,7 +4,7 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin: 10px;
+    margin: 10px 3% 10px 5%;
 }
 
 /* Estilo para o modal */
