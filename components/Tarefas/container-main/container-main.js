@@ -70,22 +70,27 @@ document.addEventListener('DOMContentLoaded', function () {
                                         }</span>
                                     </p>
                                 </div>
+
                                 <div id='card-oculto' class='active'>
-                                    <div class='container'>
-                                        <ul class='progressbar'>
-                                            ${statusListItems}
-                                        </ul>
-                                    </div>
+                                <div class='container'>
+                                    <ul class='progressbar'>
+                                        ${statusListItems}
+                                    </ul>
+                                </div>
+                                
+                                <div class='container-descricao-tarefa'>
                                     <p>  
                                         <span id='mensagem-task'>${
                                             item.mensagem
                                         }</span>
                                     </p>
-                                    <p>
-                                    ${
-                                        item.update !== undefined ? `<p>` : ''
-                                    }</p>
                                 </div>
+                                
+                        
+                                ${item.update !== undefined ? `<p>` : ''}
+                            </div>
+                                
+                                
                             </div>
                         </div>
                     `;
