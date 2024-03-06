@@ -28,7 +28,7 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin: 10px;
+    margin: 10px 10px 10px 80px;
 }
 
 #card-sistema-interno {
