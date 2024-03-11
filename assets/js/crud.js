@@ -111,7 +111,30 @@ export const adicionarNovaTarefa = async (data) => {
 
 export const editarTarefaPorId = async (database, taskId, novosDados) => {
     const listaRef = database.ref('lista');
-
+    console.log(novosDados)
+    // push para o array history
+    novosDados.history.push({
+        nomeTarefa: novosDados.nomeTarefa || 'Nova Tarefa',
+        origemProjeto: novosDados.origemProjeto || 'Outros',
+        statusTarefa:
+            novosDados.statusTarefa === 'Em andamento'
+                ? 'E'
+                : novosDados.statusTarefa === 'Desenvolvimento'
+                ? 'D'
+                : novosDados.statusTarefa === 'Homologado'
+                ? 'H'
+                : novosDados.statusTarefa === 'Producao'
+                ? 'P'
+                : novosDados.statusTarefa || 'Em andamento',
+        mensagem: novosDados.mensagem || '',
+        autorTarefa: novosDados.autorTarefa || 'Nome do Usuário',
+        created: novosDados.created
+            ? new Date(novosDados.created).toLocaleDateString()
+            : new Date().toLocaleDateString(),
+        update: novosDados.update
+            ? new Date(novosDados.update).toLocaleDateString()
+            : new Date().toLocaleDateString(),
+    });
     try {
         const tarefaRef = listaRef.child(taskId);
         await tarefaRef.update(novosDados);

@@ -175,6 +175,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                         statusTarefa: modalStatusTarefa.value,
                                         mensagem: modalMensagem.value,
                                         autorTarefa: modalAutorTarefa.value,
+                                        // a list called history to save the changes
+                                        history: itemClicado.history || [],
                                     };
 
                                     // Chama a função para editar a tarefa com os novos dados
