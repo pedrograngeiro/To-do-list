@@ -68,6 +68,30 @@ export const adicionarNovaTarefa = async (data) => {
         update: data.update
             ? new Date(data.update).toLocaleDateString()
             : new Date().toLocaleDateString(),
+            history: [
+                {
+                    nomeTarefa: data.nomeTarefa || 'Nova Tarefa',
+                    origemProjeto: data.origemProjeto || 'Outros',
+                    statusTarefa:
+                        data.statusTarefa === 'Em andamento'
+                            ? 'E'
+                            : data.statusTarefa === 'Desenvolvimento'
+                            ? 'D'
+                            : data.statusTarefa === 'Homologado'
+                            ? 'H'
+                            : data.statusTarefa === 'Producao'
+                            ? 'P'
+                            : data.statusTarefa || 'Em andamento',
+                    mensagem: data.mensagem || '',
+                    autorTarefa: data.autorTarefa || 'Nome do Usuário',
+                    created: data.created
+                        ? new Date(data.created).toLocaleDateString()
+                        : new Date().toLocaleDateString(),
+                    update: data.update
+                        ? new Date(data.update).toLocaleDateString()
+                        : new Date().toLocaleDateString(),
+                },
+            ],
     };
 
     const database = firebase.database(); // Obtenha a referência do banco de dados aqui (se não estiver no escopo anterior)
