@@ -11,7 +11,7 @@
 .grid-item {
     position: relative;
     width: 320px;
-    height: 380px;
+    height: 100%;
     padding: 10px;
     text-align: center;
     background-color: #353d40;
@@ -204,6 +204,30 @@
 
     margin: 0;
     border-radius: 5px;
+}
+
+#list-history {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.container-log-historico {
+    width: 320px;
+    color: #000;
+    background-color: #fff;
+    margin: 10px 0 0 0;
+    border-radius: 5px;
+}
+
+.container-log-historico li {
+    
+    padding: 10px 0px 0px 20px;
+    font-size: 1.0rem;
+    font-weight: 400;
+    color: #353d40;
+    text-align: left;
+    list-style-type: none;
 }
 
 .container-descricao-tarefa p {

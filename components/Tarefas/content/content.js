@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('components/Tarefas/content/content.html')
         .then((response) => response.text())
         .then((content) => {
+
+
+
             const contentElement = document.getElementById('content');
             contentElement.innerHTML = content;
 
@@ -57,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log('Executado após 1 segundo');
                     }, 1000);
                 });
+
         })
         .catch((error) => {
             console.error('Error loading content:', error);
