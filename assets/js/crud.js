@@ -68,6 +68,30 @@ export const adicionarNovaTarefa = async (data) => {
         update: data.update
             ? new Date(data.update).toLocaleDateString()
             : new Date().toLocaleDateString(),
+            history: [
+                {
+                    nomeTarefa: data.nomeTarefa || 'Nova Tarefa',
+                    origemProjeto: data.origemProjeto || 'Outros',
+                    statusTarefa:
+                        data.statusTarefa === 'Em andamento'
+                            ? 'E'
+                            : data.statusTarefa === 'Desenvolvimento'
+                            ? 'D'
+                            : data.statusTarefa === 'Homologado'
+                            ? 'H'
+                            : data.statusTarefa === 'Producao'
+                            ? 'P'
+                            : data.statusTarefa || 'Em andamento',
+                    mensagem: data.mensagem || '',
+                    autorTarefa: data.autorTarefa || 'Nome do Usuário',
+                    created: data.created
+                        ? new Date(data.created).toLocaleDateString()
+                        : new Date().toLocaleDateString(),
+                    update: data.update
+                        ? new Date(data.update).toLocaleDateString()
+                        : new Date().toLocaleDateString(),
+                },
+            ],
     };
 
     const database = firebase.database(); // Obtenha a referência do banco de dados aqui (se não estiver no escopo anterior)
@@ -87,7 +111,30 @@ export const adicionarNovaTarefa = async (data) => {
 
 export const editarTarefaPorId = async (database, taskId, novosDados) => {
     const listaRef = database.ref('lista');
-
+    console.log(novosDados)
+    // push para o array history
+    novosDados.history.push({
+        nomeTarefa: novosDados.nomeTarefa || 'Nova Tarefa',
+        origemProjeto: novosDados.origemProjeto || 'Outros',
+        statusTarefa:
+            novosDados.statusTarefa === 'Em andamento'
+                ? 'E'
+                : novosDados.statusTarefa === 'Desenvolvimento'
+                ? 'D'
+                : novosDados.statusTarefa === 'Homologado'
+                ? 'H'
+                : novosDados.statusTarefa === 'Producao'
+                ? 'P'
+                : novosDados.statusTarefa || 'Em andamento',
+        mensagem: novosDados.mensagem || '',
+        autorTarefa: novosDados.autorTarefa || 'Nome do Usuário',
+        created: novosDados.created
+            ? new Date(novosDados.created).toLocaleDateString()
+            : new Date().toLocaleDateString(),
+        update: novosDados.update
+            ? new Date(novosDados.update).toLocaleDateString()
+            : new Date().toLocaleDateString(),
+    });
     try {
         const tarefaRef = listaRef.child(taskId);
         await tarefaRef.update(novosDados);

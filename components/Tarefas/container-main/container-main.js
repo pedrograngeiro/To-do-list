@@ -77,6 +77,31 @@ document.addEventListener('DOMContentLoaded', function () {
                                         ${statusListItems}
                                     </ul>
                                 </div>
+
+                                <button class="open-log">Log Histórico</button>
+                                
+                                <div style="display: none;">
+                                    <ul id='list-history'>
+                                        ${item.history !== undefined
+                                            ? item.history.map(
+                                                (historyItem, index) =>
+                                                    `
+                                                    <div class="container-log-historico">
+                                                    <li><b>${historyItem.nomeTarefa}</b></li>
+                                                    <li>${historyItem.created}</li>
+                                                    <li>${historyItem.mensagem}</li>
+                                                    <li>${historyItem.origemProjeto}</li>
+                                                    <li><b>${historyItem.autorTarefa}</b></li>
+
+
+                                                    </div>
+                                                    `
+                                            ).join('')
+                                            : ''}
+                                    </ul>
+                                </div>
+
+                                <br>
                                 
                                 <div class='container-descricao-tarefa'>
                                     <p>  
@@ -114,6 +139,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             step.classList.remove('active');
                         }
                     });
+
+                    
 
                     // click no botão de editar
                     const meuBotao = divCard.querySelector('.fa-pen-to-square');
@@ -175,6 +202,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                         statusTarefa: modalStatusTarefa.value,
                                         mensagem: modalMensagem.value,
                                         autorTarefa: modalAutorTarefa.value,
+                                        // a list called history to save the changes
+                                        history: itemClicado.history || [],
                                     };
 
                                     // Chama a função para editar a tarefa com os novos dados
@@ -244,7 +273,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
 
                     divTarefas.append(divCard);
+
+                    const meuBotaoLog = divCard.querySelector('.open-log');
+                    meuBotaoLog.addEventListener('click', function () {
+                        // Selecionar o elemento que contém o log de histórico
+                        const logContainer = this.nextElementSibling;
+
+                        // Verificar se o log de histórico está visível
+                        if (logContainer.style.display === 'none') {
+                            // Se estiver oculto, exiba o log de histórico
+                            logContainer.style.display = 'block';
+                        } else {
+                            // Se estiver visível, oculte o log de histórico
+                            logContainer.style.display = 'none';
+                        }
+                    });
                 });
             });
         });
+
+    
 });
