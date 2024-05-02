@@ -28,6 +28,7 @@
     flex-direction: column;
     position: relative;
     width: 100%;
+    background-color: #e9eaeb;
 }
 
 .card .input_texto {
@@ -201,10 +202,9 @@
 }
 
 .container-descricao-tarefa {
-    width: 320px;
+    width: 365px;
     background-color: #fff;
-
-    margin: 0;
+    margin: 5px;
     border-radius: 5px;
 }
 
