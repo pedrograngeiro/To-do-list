@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </div>
 
                                 <div id='card-oculto' class='active'>
-                                <div class='container'>
+                                <div class='container-personalizado'>
                                     <ul class='progressbar'>
                                         ${statusListItems}
                                     </ul>
                                 </div>
 
-                                <button class="open-log">Log Histórico</button>
+                                <button type="submit" class="open-log btn btn-primary">Log Histórico</button>
                                 
                                 <div style="display: none;">
                                     <ul id='list-history'>
