@@ -21,6 +21,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
 }
 
+.grid-item #meuBotaoExcluir{
+    visibility: hidden;
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
@@ -215,10 +219,10 @@
 }
 
 .container-log-historico {
-    width: 320px;
+    width: 365px;
     color: #000;
     background-color: #fff;
-    margin: 10px 0 0 0;
+    margin: 10px 5px 0 5px;
     border-radius: 5px;
 }
 
