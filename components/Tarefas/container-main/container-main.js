@@ -87,13 +87,11 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 (historyItem, index) =>
                                                     `
                                                     <div class="container-log-historico">
-                                                    <li><b>Titulo:</b> ${historyItem.nomeTarefa}</li>
-                                                    <li><b>Data de criação:</b> ${historyItem.created}</li>
-                                                    <li><b>Descrição:</b> ${historyItem.mensagem}</li>
-                                                    <li><b>Origem:</b> ${historyItem.origemProjeto}</li>
-                                                    <li><b>Autor:</b> <b>${historyItem.autorTarefa}</b></li>
-
-
+                                                        <li><b>Titulo:</b> ${historyItem.nomeTarefa}</li>
+                                                        <li><b>Data de criação:</b> ${historyItem.created}</li>
+                                                        <li><b>Descrição:</b> ${historyItem.mensagem}</li>
+                                                        <li><b>Origem:</b> ${historyItem.origemProjeto}</li>
+                                                        <li><b>Autor:</b> <b>${historyItem.autorTarefa}</b></li>
                                                     </div>
                                                     `
                                             ).join('')
