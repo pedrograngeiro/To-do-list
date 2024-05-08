@@ -46,3 +46,21 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.container-log-historico {
+    width: 365px;
+    color: #000;
+    background-color: #fff;
+    margin: 10px 5px 0 5px;
+    border-radius: 5px;
+}
+
+.container-log-historico li {
+    
+    padding: 10px 0px 0px 20px;
+    font-size: 1.0rem;
+    font-weight: 400;
+    color: #353d40;
+    text-align: left;
+    list-style-type: none;
+}

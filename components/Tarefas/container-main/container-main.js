@@ -77,8 +77,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                         ${statusListItems}
                                     </ul>
                                 </div>
-
-                                <button type="submit" class="open-log btn btn-primary">Log Histórico</button>
+                                
+                                <div class="log-historico open-log">
+                                    <button type="submit" class=" btn btn-primary">Log Histórico</button>
+                                </div>
                                 
                                 <div style="display: none;">
                                     <ul id='list-history'>

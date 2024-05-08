@@ -106,7 +106,7 @@
 .container-personalizado ul {
     list-style: none;
     display: flex;
-    width: 320px;
+    width: 380px;
     margin-top: 60px;
     padding: 0;
 }
@@ -218,23 +218,7 @@
     list-style-type: none;
 }
 
-.container-log-historico {
-    width: 365px;
-    color: #000;
-    background-color: #fff;
-    margin: 10px 5px 0 5px;
-    border-radius: 5px;
-}
 
-.container-log-historico li {
-    
-    padding: 10px 0px 0px 20px;
-    font-size: 1.0rem;
-    font-weight: 400;
-    color: #353d40;
-    text-align: left;
-    list-style-type: none;
-}
 
 .container-descricao-tarefa p {
     padding: 10px;
@@ -243,4 +227,20 @@
     font-weight: 500;
     color: #353d40;
     text-align: left;
+}
+
+/* Centralizar log-historico */
+.log-historico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.log-historico button {
+    width: 360px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 0 0 0 -5px;
 }
